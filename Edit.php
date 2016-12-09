@@ -68,8 +68,29 @@
             }
             else
             {
-                Print '<h2 align="center"> There is no data to data to be edited.</h2>';
+                Print '<h2 align="center"> There is no data to be edited.</h2>';
             }
             ?>
         </body>
 </html>
+<?php
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        mysql_connect("localhost", "root", "") or die(mysql_error());
+        mysql_select_db("first_db") or die("Cannot connect to database");
+        $details = mysql_real_escape_string($_POST['details']);
+        $public = "no";
+        $id = $_SESSION['id'];
+        $time = strftime("%X");
+        $date = strftime("%B %d, %Y");
+
+        foreach($_POST['public'] as $list)
+        {
+            if($list != null)
+            {
+                $public = "yes";
+            }
+        }
+        mysql_query("UPDATE list SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'");
+    }
+?>

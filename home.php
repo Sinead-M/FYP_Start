@@ -43,10 +43,20 @@
                     Print '<td align = "center">'. $row['date_posted'] . " - ". $row['time_posted']."</td>";
                     Print '<td align = "center">'. $row['date_edited'] . " - ". $row['time_edited']."</td>";
                     Print '<td align = "center"><a href = "edit.php?id='.$row['id'].'">Edit</a></td>';
-                    Print '<td align = "center"><a href = "delete.php?id='.$row['id'].'">Delete</a></td>';
+                    Print '<td align = "center"><a href = "#" onclick="myFunction('.$row['id'].')">Delete</a></td>';
                     Print "</tr>";
                 }
             ?>
         </table>
+        <script>
+            function myFunction(id)
+            {
+                var r = confirm("Are you sure you want to delete this record?");
+                if (r = true)
+                {
+                    window.location.assign("delete.php?id=" + id);
+                }
+            }
+        </script>
     </body>
 </html>
