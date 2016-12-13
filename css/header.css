@@ -4,8 +4,8 @@ body{
 }
 .header{
     width: 100%;
-    height: 100px;
-    background-color: darkgray;
+    height: 90px;
+    background-color: gainsboro;
     padding: 20px;
     margin-right: 20px;
 }
@@ -21,7 +21,7 @@ body{
     background-color: #2ECC71;
     border-bottom: 4px solid #27AE60;
     position: absolute;
-    right: 134px;
+    right: 160px;
     top: 36px;
 }
 .login2{
@@ -31,5 +31,5 @@ body{
     background-color: #2ECC71;
     border-bottom: 4px solid #27AE60;
     position: absolute;
-    right: 0px;
+    right: 20px;
 }

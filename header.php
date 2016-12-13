@@ -9,7 +9,7 @@
              <form action="login.php">
                  <input type="submit" value="Drivers Login" class="login"/>
              </form>
-            <form action="login.php">
+            <form action="adminLogin.php">
                 <input type="submit" value="Admin Login" class="login2"/>
             </form>
         </div>

@@ -7,7 +7,7 @@
     <body>
         <h2 class="heading">Drivers Login</h2>
 <!--        <a href="index.php">Click here to go back</a><br/>-->
-        <div class="container"
+        <div class="container">
             <form action="checklogin.php" method="post">
                 <div class="form-input">
                     <input type="text" name="username" required="required" placeholder="Enter Username" />
