@@ -17,6 +17,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = mysql_real_escape_string($_POST['username']);
     $password = mysql_real_escape_string($_POST['password']);
+    $hashed_password = hash('sha512', $_POST['password']);
     $bool = true;
 
     mysql_connect("localhost", "root", "") or die(mysql_error()); //Connect to server
@@ -34,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     if ($bool) //checks if bool is true
     {
-        mysql_query("INSERT INTO users (username, password) VALUES ('$username', '$password')"); //Inserts the value to table users
+        mysql_query("INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')"); //Inserts the value to table users
         Print '<script>alert("Successfully Registered");</script>';// Prompts the user
         Print '<script>window.location.assign("register.php");</script>'; //redirects to register.php
     }
