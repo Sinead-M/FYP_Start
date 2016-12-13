@@ -2,6 +2,14 @@ body{
     /*margin: 0;*/
     /*padding: 0;*/
 }
+.weekdays{
+    display:inline-block;
+    margin-left: 13px;
+    border: 1px solid black;
+    padding-left: 36px;
+    padding-right: 36px;
+    border-radius: 40px;
+}
 .heading{
     width: 100%;
     text-align: center;
@@ -28,8 +36,8 @@ input[type="text"],input[type="password"]{
     padding: 15px 25px;
     color: #fff;
     border: none;
-    background-color: #2ECC71;
-    border-bottom: 4px solid #27AE60;
+    background-color: #8EB529;
+    border-bottom: 4px solid #779E29;
 }
 p{
     color: #000000;

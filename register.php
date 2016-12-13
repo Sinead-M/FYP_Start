@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     if ($bool) //checks if bool is true
     {
-        mysql_query("INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')"); //Inserts the value to table users
+        mysql_query("INSERT INTO users (username, password) VALUES ('$username', '$password')"); //Inserts the value to table users
         Print '<script>alert("Successfully Registered");</script>';// Prompts the user
         Print '<script>window.location.assign("register.php");</script>'; //redirects to register.php
     }

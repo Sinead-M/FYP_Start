@@ -23,10 +23,10 @@
         }
 
         mysql_query("INSERT INTO list (details, date_posted, time_posted, public) VALUES ('$details','$date', '$time', '$decision')");
-        header('location: home.php');
+        header('location: driverHome.php');
     }
     else
     {
-        header("location:home.php");
+        header("location:driverHome.php");
     }
 ?>

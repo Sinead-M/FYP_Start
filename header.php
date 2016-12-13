@@ -4,9 +4,11 @@
         <link rel="stylesheet" type="text/css" href="css/header.css">
     </head>
     <body>
-        <div class="header"
+        <div class="header">
+            <a href="index.php">
              <img src="img/logo.png">
-             <form action="login.php">
+            </a>
+             <form action="driverLogin.php">
                  <input type="submit" value="Drivers Login" class="login"/>
              </form>
             <form action="adminLogin.php">

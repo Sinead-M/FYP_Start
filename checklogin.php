@@ -21,18 +21,18 @@
             if($password == $table_password)
             {
                 $_SESSION['user'] = $username;
-                header("location: home.php");
+                header("location: driverHome.php");
             }
         }
         else
         {
             Print '<script>alert("Incorrect Password!");</script>';
-            Print '<script>window.location.assign("login.php");</script>';
+            Print '<script>window.location.assign("driverLogin.php");</script>';
         }
     }
     else
     {
         Print '<script>alert("Incorrect Username!");</script>';
-        Print '<script>window.location.assign("login.php");</script>';
+        Print '<script>window.location.assign("driverLogin.php");</script>';
     }
 ?>

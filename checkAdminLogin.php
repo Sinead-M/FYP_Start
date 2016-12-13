@@ -21,7 +21,7 @@ if($exists > 0)
         if($password == $table_password)
         {
             $_SESSION['user'] = $username;
-            header("location: home.php");
+            header("location: adminHome.php");
         }
     }
     else

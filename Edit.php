@@ -16,7 +16,7 @@
             <h2> Home Page </h2>
             <p> Hello <?php Print "$user" ?>!</p>
             <a href="logout.php">Click here to logout</a><br/><br/>
-            <a href="home.php">Return to Home Page </a>
+            <a href="driverHome.php">Return to Home Page </a>
             <h2 align = "center"> Currently Selected </h2>
             <table border="1px" width="100%">
                 <tr>

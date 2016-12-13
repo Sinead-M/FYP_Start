@@ -12,6 +12,6 @@
         mysql_select_db("first_db") or die("Cannot connect to database");
         $id = $_GET['id'];
         mysql_query("DELETE FROM list WHERE id = '$id'");
-        header("location: home.php");
+        header("location: driverHome.php");
     }
 ?>
