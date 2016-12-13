@@ -1,0 +1,36 @@
+body{
+    /*margin: 0;*/
+    /*padding: 0;*/
+}
+.heading{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+.container{
+    width: 500px;
+    height:400px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+input[type="text"],input[type="password"]{
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding-left: 30px;
+}
+.btn-login{
+    padding: 15px 25px;
+    color: #fff;
+    border: none;
+    background-color: #2ECC71;
+    border-bottom: 4px solid #27AE60;
+}
+p{
+    color: #000000;
+}

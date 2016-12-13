@@ -9,8 +9,8 @@
     if($_SERVER['REQUEST_METHOD'] = "POST")
     {
         $details = mysql_real_escape_string($_POST['details']);
-        $time = strifttime("%X");
-        $date = strifttime("%B %d, %Y");
+        $time = strftime("%X");
+        $date = strftime("%B %d, %Y");
         $decision ="no";
 
         mysql_connect("localhost", "root", "") or die(mysql_error());
