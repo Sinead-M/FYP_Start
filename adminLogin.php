@@ -15,7 +15,7 @@
     <div class="form-input">
         <input type="password" name="password" required="required" placeholder="Enter Password" />
     </div>
-    <input type="submit" value="Login" class="btn-login"/>
+    <input type="submit" value="Login" class="btn-login1"/>
     <p>Forget Password?</p>
 </form>
 </div>

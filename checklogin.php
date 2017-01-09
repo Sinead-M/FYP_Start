@@ -1,10 +1,8 @@
 <?php
     session_start();
+    include 'inc/config.php';
     $username = mysql_real_escape_string($_POST['username']);
     $password = mysql_real_escape_string($_POST['password']);
-
-    mysql_connect("localhost", "root","") or die(mysql_error());
-    mysql_select_db("first_db") or die("Cannot connect to database");
     $query = mysql_query("SELECT * from users WHERE username = '$username'");
     $exists = mysql_num_rows($query);
     $table_users = "";

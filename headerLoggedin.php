@@ -8,9 +8,9 @@
             <a href="index.php">
              <img src="img/logo.png">
             </a>
-             <form action="logout.php">
-                 <input type="submit" value="Logout" class="login2"/>
-             </form>
+            <a href="logout.php"
+                <button class="login2">Logout</button>
+            </a>
         </div>
     </body>
 </html>

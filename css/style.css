@@ -12,6 +12,7 @@ body{
     position: absolute;
     top: 175px;
     right: 20px;
+    cursor: pointer;
 }
 .monday{
     display:inline-block;
@@ -61,7 +62,25 @@ input[type="text"],input[type="password"]{
     background-color: #fff;
     text-align: center;
 }
+.btn-login1{
+    padding: 15px 25px;
+    color: #fff;
+    border: none;
+    background-color: #8EB529;
+    border-bottom: 4px solid #779E29;
+    cursor: pointer;
+}
 .btn-login{
+    float: right;
+    padding: 15px 25px;
+    color: #fff;
+    border: none;
+    background-color: #8EB529;
+    border-bottom: 4px solid #779E29;
+    cursor: pointer;
+}
+.btn-cancel{
+    float: left;
     padding: 15px 25px;
     color: #fff;
     border: none;
@@ -71,7 +90,7 @@ input[type="text"],input[type="password"]{
 p{
     color: #000000;
 }
-.modal {
+.password-Modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -86,7 +105,7 @@ p{
 }
 
 /* Modal Content */
-.modal-content {
+.password-modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -113,25 +132,27 @@ p{
 }
 
 /* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.btn-cancel{
+    float: left;
+    padding: 15px 25px;
+    color: #fff;
+    border: none;
+    background-color: #8EB529;
+    border-bottom: 4px solid #779E29;
 }
 
-.close:hover,
-.close:focus {
+.btn-cancel:hover,
+.btn-cancel:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header {
+.password-modal-header {
     padding: 2px 16px;
     background-color: #8EB529;
     color: white;
     text-align: center;
 }
 
-.modal-body {padding: 2px 16px;}
+.password-modal-body {padding: 2px 16px;}
