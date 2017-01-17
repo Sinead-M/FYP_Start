@@ -3,40 +3,250 @@
         <div class="weekdays">
             <h2>Monday</h2>
         </div>
-        <table class="table">
-            <tr>
-                <th>Vehicle: 06-KY-10170</th>
-            </tr>
-            <tr>
-                <td>Driver: T.J Nelligan</td>
-            </tr>
-            <tr>
-                <td>Coolick - Fossa (PU)</td>
-            </tr>
-            <tr>
-                <td>Coolick - Fossa (Return)</td>
-            </tr>
-            <tr>
-                <td>C404 (Return)</td>
-            </tr>
-        </table>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND monday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
-    <div class="weekdays">
-        <h2>Tuesday</h2>
+    <div class="tuesday">
+        <div class="weekdays">
+            <h2>Tuesday</h2>
+        </div>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND tuesday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
-    <div class="weekdays">
-        <h2>Wednesday</h2>
+    <div class="wednesday">
+        <div class="weekdays">
+            <h2>Wednesday</h2>
+        </div>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND wednesday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
-    <div class="weekdays">
-        <h2>Thursday</h2>
+    <div class="thursday">
+        <div class="weekdays">
+            <h2>Thursday</h2>
+        </div>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND thursday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
-    <div class="weekdays">
-        <h2>Friday</h2>
+    <div class="friday">
+        <div class="weekdays">
+            <h2>Friday</h2>
+        </div>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND friday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
-    <div class="weekdays">
-        <h2>Saturday</h2>
+    <div class="saturday">
+        <div class="weekdays">
+            <h2>Saturday</h2>
+        </div>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND saturday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
-    <div class="weekdays">
-        <h2>Sunday</h2>
+    <div class="sunday">
+        <div class="weekdays">
+            <h2>Sunday</h2>
+        </div>
+        <?php
+        include 'inc/config.php';
+        $noresult = 0;
+        $alldrivers = mysql_query("Select * from drivers");
+        while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            $drivername = $alldriversArray['full_name'];
+            $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND sunday = 'yes'");
+            if (mysql_num_rows($query) > 0) {
+                $column = mysql_fetch_array($query);
+                Print "<table class='table'>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print "</tr>";
+                while ($row = mysql_fetch_array($query)) {
+                    Print "<tr>";
+                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print "</tr>";
+                }
+                Print "</table>";
+            } else {
+                $noresult = 1;
+            }
+        }
+        ?>
     </div>
+    <?php
+        if($noresult > 0){
+            Print '<h1 align = "center">'. "You have no routes assigned to you" . "</h1>";
+        }
+    ?>
 </html>

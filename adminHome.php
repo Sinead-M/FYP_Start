@@ -6,9 +6,11 @@
 </head>
 <?php
 session_start();
-if($_SESSION['user']){
+if(isset($_SESSION['user'])){
+    require_once("headerLoggedin.php");
 }
 else{
+    require_once("header.php");
     header("location:index.php");
 }
 $user = $_SESSION['user'];

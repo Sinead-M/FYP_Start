@@ -9,7 +9,7 @@
             </div>
             <div class="password-modal-body">
                 <div class="container">
-                    <form action="checklogin.php" method="post">
+                    <form action="changePasswordCheck.php" method="post">
                         <div class="form-input">
                             <input type="password" name="currentPassword" required="required" placeholder="Enter current Password" />
                         </div>

@@ -1,7 +1,7 @@
 <?php
 
 $db_host="localhost";
-$db_name="first_db";
+$db_name="kerry_flyer";
 $db_username="root";
 $db_password="";
 
