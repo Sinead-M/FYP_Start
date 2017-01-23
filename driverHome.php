@@ -22,7 +22,7 @@
         <h2>Driver Home Page</h2>
         <p>Hello <?php Print "$name"?>!</p>
         <button id="changePassword" class="button">Change Password</button>
-        <?php include 'calendar.php'; ?>
+        <?php include 'driverCalendar.php'; ?>
         <?php include 'changePasswordModal.php'; ?>
     </body>
 </html>

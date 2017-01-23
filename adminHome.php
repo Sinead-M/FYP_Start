@@ -1,4 +1,3 @@
-<?php include 'header.php'; ?>
 <html>
 <head>
     <title>My first PHP website</title>
