@@ -1,4 +1,5 @@
 <html xmlns="http://www.w3.org/1999/html">
+<div class="calendarContainer">
     <div class="monday">
         <div class="weekdays">
             <h2>Monday</h2>
@@ -244,9 +245,5 @@
         }
         ?>
     </div>
-    <?php
-        if($noresult > 0){
-            Print '<h1 align = "center">'. "You have no routes assigned to you" . "</h1>";
-        }
-    ?>
+</div>
 </html>

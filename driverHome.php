@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>My first PHP website</title>
+        <title>Kerry Flyer Timetables</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <?php
@@ -19,10 +19,10 @@
     $name = $namearray['full_name'];
     ?>
     <body>
-        <h2>Driver Home Page</h2>
-        <p>Hello <?php Print "$name"?>!</p>
+        <h2 class="welcome">Hello <?php Print "$name"?>!</h2>
         <button id="changePassword" class="button">Change Password</button>
         <?php include 'driverCalendar.php'; ?>
         <?php include 'changePasswordModal.php'; ?>
+        <?php include 'logoutModal.php'?>
     </body>
 </html>

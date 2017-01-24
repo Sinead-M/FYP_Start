@@ -1,5 +1,6 @@
 <?php include 'inc/config.php'?>
 <html xmlns="http://www.w3.org/1999/html">
+<div class="calendarContainer">
     <div class="monday">
         <div class="weekdays">
             <h2>Monday</h2>
@@ -16,16 +17,16 @@
                 Print '<td class="heading">' . $column['driver'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
                     Print "<tr>";
-                    Print '<td class="rows">' . $row['route_name'] . "</td>";
+                    Print '<td class="heading"><input type="submit" name="name" value="'. $row['route_name'] .'">';"</td>";
                     Print "</tr>";
                 }
                 Print "</table>";
             } else {
-                $noresult = 1;
+                Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
             }
         ?>
     </div>
@@ -45,16 +46,16 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="rows">' . $column['route_name'] . "</td>";
+            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="rows">' . $row['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
         } else {
-            $noresult = 1;
+            Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
         }
         ?>
     </div>
@@ -74,16 +75,16 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="rows">' . $column['route_name'] . "</td>";
+            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="rows">' . $row['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
         } else {
-            $noresult = 1;
+            Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
         }
         ?>
     </div>
@@ -103,16 +104,16 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="rows">' . $column['route_name'] . "</td>";
+            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="rows">' . $row['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
         } else {
-            $noresult = 1;
+            Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
         }
         ?>
     </div>
@@ -132,16 +133,16 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="rows">' . $column['route_name'] . "</td>";
+            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="rows">' . $row['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
         } else {
-            $noresult = 1;
+            Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
         }
         ?>
     </div>
@@ -161,16 +162,16 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="rows">' . $column['route_name'] . "</td>";
+            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="rows">' . $row['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
         } else {
-            $noresult = 1;
+            Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
         }
         ?>
     </div>
@@ -184,13 +185,13 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+            Print '<td class="heading">'. $column['vehicle_no'] ."</td>";
             Print "</tr>";
             Print "<tr>";
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="rows">' . $column['route_name'] . "</td>";
+            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
@@ -199,8 +200,9 @@
             }
             Print "</table>";
         } else {
-            $noresult = 1;
+            Print '<p style="text-align: center; font-weight: bold; font-size: larger">You have no routes assigned</p>';
         }
         ?>
     </div>
+</div>
 </html>
