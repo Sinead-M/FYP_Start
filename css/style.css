@@ -186,6 +186,9 @@ p{
 
 .password-modal-body {padding: 2px 16px;}
 
-input, button{
+.routeButton{
+    background: white;
+    font-size: inherit;
     border: none;
+    cursor: pointer;
 }

@@ -17,11 +17,11 @@
                 Print '<td class="heading">' . $column['driver'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+                Print '<td class="heading"><input type="submit" name="name"  class="routeButton" value="'. $column['route_name'] .'">';"</td>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
                     Print "<tr>";
-                    Print '<td class="heading"><input type="submit" name="name" value="'. $row['route_name'] .'">';"</td>";
+                    Print '<td class="heading"><input type="submit" name="name"  class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                     Print "</tr>";
                 }
                 Print "</table>";
@@ -46,11 +46,11 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+            Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -75,11 +75,11 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+            Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -104,11 +104,11 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+            Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -133,11 +133,11 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+            Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -162,11 +162,11 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+            Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -191,11 +191,11 @@
             Print '<td class="heading">' . $column['driver'] . "</td>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading"><input type="submit" name="name" value="'. $column['route_name'] .'">';"</td>";
+            Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $column['route_name'] .'">';"</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="rows">' . $row['route_name'] . "</td>";
+                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
                 Print "</tr>";
             }
             Print "</table>";
