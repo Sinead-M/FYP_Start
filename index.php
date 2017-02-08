@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>My first PHP Website</title>
+        <title>Kerry Flyer Timetables</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <?php

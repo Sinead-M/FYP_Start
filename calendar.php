@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <script src="jquery-3.1.1.min.js"/>
-    <script src="js/bootstrap.js"/>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <div class="calendarContainer">
     <div class="monday">
@@ -19,10 +19,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -54,10 +54,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -89,10 +89,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -124,10 +124,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -159,10 +159,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -194,10 +194,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -229,13 +229,13 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['driver'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="rows">' . $column['route_name'] . "</td>";
+                Print '<th class="rows">' . $column['route_name'] . "</th>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
                     Print "<tr>";
@@ -250,27 +250,26 @@
         ?>
     </div>
 </div>
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">EDIT</h4>
-            </div>
-            <div class="modal-body">
-                <p><input type="text" class="input-sm" id="textfname"/></p>
-                <p><input type="text" class="input-sm" id="textlname"/></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Changes</button>
+<div id="routeModal" class="password-Modal">
+    <!-- Modal content -->
+    <div class="password-modal-content">
+        <div class="password-modal-header">
+            <p><input type="text" class="input-sm" id="txtfname" readonly/></p>
+        </div>
+        <div class="password-modal-body">
+            <div class="container">
+                <p class="routeDetails">Route Number: <input class="routeInput" type="text" readonly/></p>
+                <p class="routeDetails">Time: <input class="routeInput" type="text" readonly/></p>
+                <p class="routeDetails">Number of passengers: <input class="routeInput" type="text" readonly/></p>
+                <p class="routeDetails"> Passenger Assistant: <input class="routeInput" type="text" readonly/></p>
+                <p class="routeDetails">Accessibility Requirements: <input class="routeInput" type="text" readonly/></p>
             </div>
         </div>
     </div>
-</div>
-<script>
-    $('table tbody tr td').on('click',function(){
-        $("#myModal").modal("show");
+
+</div><script>
+    $('table tr td').on('click',function(){
+        $("#routeModal").modal("show");
         $("#textfname").val($(this).closest('tr').children()[0].textContent);
         $("#textlname").val($(this).closest('tr').children()[0].textContent);
     });
