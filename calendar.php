@@ -1,3 +1,4 @@
+<?php include 'inc/config.php'?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <script src="jquery-3.1.1.min.js"></script>
@@ -9,8 +10,6 @@
             <h2>Monday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -33,8 +32,6 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
@@ -44,8 +41,6 @@
             <h2>Tuesday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -68,8 +63,6 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
@@ -79,8 +72,6 @@
             <h2>Wednesday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -103,8 +94,6 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
@@ -114,8 +103,6 @@
             <h2>Thursday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -138,8 +125,6 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
@@ -149,8 +134,6 @@
             <h2>Friday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -173,8 +156,6 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
@@ -184,8 +165,6 @@
             <h2>Saturday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -208,8 +187,6 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
@@ -219,8 +196,6 @@
             <h2>Sunday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -243,35 +218,35 @@
                     Print "</tr>";
                 }
                 Print "</table>";
-            } else {
-                $noresult = 1;
             }
         }
         ?>
     </div>
 </div>
-<div id="routeModal" class="password-Modal">
-    <!-- Modal content -->
-    <div class="password-modal-content">
-        <div class="password-modal-header">
-            <p><input type="text" class="input-sm" id="txtfname" readonly/></p>
-        </div>
-        <div class="password-modal-body">
-            <div class="container">
-                <p class="routeDetails">Route Number: <input class="routeInput" type="text" readonly/></p>
-                <p class="routeDetails">Time: <input class="routeInput" type="text" readonly/></p>
-                <p class="routeDetails">Number of passengers: <input class="routeInput" type="text" readonly/></p>
-                <p class="routeDetails"> Passenger Assistant: <input class="routeInput" type="text" readonly/></p>
-                <p class="routeDetails">Accessibility Requirements: <input class="routeInput" type="text" readonly/></p>
+<div class="password-Modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="route-modal-content">
+            <div class="password-modal-header">
+                <p><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtfname" readonly/></p>
             </div>
-        </div>
-    </div>
-
-</div><script>
+            <div class="modal-body">
+                <div class="container">
+                    <p class="routeDetails">Route Number: <input class="input-sm" style="margin-left: 272px" type="text" id="txtlname" readonly/></p>
+                    <p class="routeDetails">Time: <input style="margin-left: 334px" type="text" readonly/></p>
+                    <p class="routeDetails">Number of passengers: <input style="margin-left: 224px" type="text" readonly/></p>
+                    <p class="routeDetails"> Passenger Assistant: <input style="margin-left: 240px" type="text" readonly/></p>
+                    <p class="routeDetails">Accessibility Requirements: </p>
+                    <input style="width: 100%;" class="routeInput" type="text" readonly/>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
     $('table tr td').on('click',function(){
-        $("#routeModal").modal("show");
-        $("#textfname").val($(this).closest('tr').children()[0].textContent);
-        $("#textlname").val($(this).closest('tr').children()[0].textContent);
+        $("#myModal").modal("show");
+        $("#txtfname").val($(this).closest('tr').children()[0].textContent);
+        $("#txtlname").val($(this).closest('tr').children()[0].textContent);
     });
 </script>
 </html>

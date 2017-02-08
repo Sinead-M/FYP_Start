@@ -1,17 +1,15 @@
+<?php include 'inc/config.php'?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <script src="js/bootstrap.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
 </head>
-<body>
 <div class="calendarContainer">
     <div class="monday">
         <div class="weekdays">
             <h2>Monday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -46,8 +44,6 @@
             <h2>Tuesday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -82,8 +78,6 @@
             <h2>Wednesday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -118,8 +112,6 @@
             <h2>Thursday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -154,8 +146,6 @@
             <h2>Friday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -190,8 +180,6 @@
             <h2>Saturday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -226,8 +214,6 @@
             <h2>Sunday</h2>
         </div>
         <?php
-        include 'inc/config.php';
-        $noresult = 0;
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
@@ -258,30 +244,30 @@
         ?>
     </div>
 </div>
-<div class="" id="myModal">
+<div class="password-Modal" id="myModal2">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">EDIT</h4>
+        <div class="route-modal-content">
+            <div class="password-modal-header">
+                <p><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtfname" readonly/></p>
             </div>
             <div class="modal-body">
-                <p><input type="text" class="input-sm" id="txtfname"/></p>
-                <p><input type="text" class="input-sm" id="txtlname"/></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="container">
+                    <p class="routeDetails">Route Number: <input class="input-sm" style="margin-left: 272px" type="text" id="txtlname" readonly/></p>
+                    <p class="routeDetails">Time: <input style="margin-left: 334px" type="text" readonly/></p>
+                    <p class="routeDetails">Number of passengers: <input style="margin-left: 224px" type="text" readonly/></p>
+                    <p class="routeDetails"> Passenger Assistant: <input style="margin-left: 240px" type="text" readonly/></p>
+                    <p class="routeDetails">Accessibility Requirements: </p>
+                    <input style="width: 100%;" class="routeInput" type="text" readonly/>
+                </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <script>
-    $('table tbody tr td').on('click',function(){
-        $("#myModal").modal("show");
+    $('table tr td').on('click',function(){
+        $("#myModal2").modal("show");
         $("#txtfname").val($(this).closest('tr').children()[0].textContent);
+        $("#txtlname").val($(this).closest('tr').children()[0].textContent);
     });
 </script>
-</body>
-
 </html>

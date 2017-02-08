@@ -1,5 +1,9 @@
 <?php include 'inc/config.php'?>
 <html xmlns="http://www.w3.org/1999/html">
+<head>
+    <script src="js/bootstrap.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
 <div class="calendarContainer">
     <div class="monday">
         <div class="weekdays">
@@ -205,4 +209,30 @@
         ?>
     </div>
 </div>
+<div class="password-Modal" id="myModal3">
+    <div class="modal-dialog">
+        <div class="route-modal-content">
+            <div class="password-modal-header">
+                <p><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtfname" readonly/></p>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <p class="routeDetails">Route Number: <input class="input-sm" style="margin-left: 272px" type="text" id="txtlname" readonly/></p>
+                    <p class="routeDetails">Time: <input style="margin-left: 334px" type="text" readonly/></p>
+                    <p class="routeDetails">Number of passengers: <input style="margin-left: 224px" type="text" readonly/></p>
+                    <p class="routeDetails"> Passenger Assistant: <input style="margin-left: 240px" type="text" readonly/></p>
+                    <p class="routeDetails">Accessibility Requirements: </p>
+                    <input style="width: 100%;" class="routeInput" type="text" readonly/>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+    $('table tr td').on('click',function(){
+        $("#myModal3").modal("show");
+        $("#txtfname").val($(this).closest('tr').children()[0].textContent);
+        $("#txtlname").val($(this).closest('tr').children()[0].textContent);
+    });
+</script>
 </html>
