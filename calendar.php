@@ -186,9 +186,6 @@
                     Print '<td class="rows">' . $row['route_name'] . "</td>";
                     Print "</tr>";
                 }
-                Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
-                Print "</tr>";
                 Print "</table>";
             }
         }
@@ -232,6 +229,27 @@
         $("#myModal").modal("show");
         var routeName = $(this).closest('tr').children()[0].textContent;
         $("#txtrname").val(routeName);
+
+        $.ajax({
+            url: 'api.php',
+            type: "POST",
+            data: {val: routeName},
+            dataType: 'json',
+            success: function (data) {
+                var routeNo = data[4];
+                var time = data[5];
+                var passNo = data[6];
+                var passAssist = data[7];
+                var access = data[8];
+
+                $("#txtrname").val(routeName);
+                $("#txtrno").val(routeNo);
+                $("#txtrtime").val(time);
+                $("#txtpno").val(passNo);
+                $("#txtpassist").val(passAssist);
+                $("#txtraccess").val(access);
+            }
+        })
     });
 </script>
 </html>
