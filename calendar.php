@@ -186,6 +186,9 @@
                     Print '<td class="rows">' . $row['route_name'] . "</td>";
                     Print "</tr>";
                 }
+                Print "<tr>";
+                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "</tr>";
                 Print "</table>";
             }
         }
@@ -210,7 +213,7 @@
                 Print '<td class="heading">' . $column['driver'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="rows">' . $column['route_name'] . "</th>";
+                Print '<td class="rows">' . $column['route_name'] . "</td>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
                     Print "<tr>";
@@ -223,48 +226,12 @@
         ?>
     </div>
 </div>
-<div class="password-Modal" id="myModal">
-    <div class="modal-dialog">
-        <div class="route-modal-content">
-            <div class="password-modal-header">
-                <p><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtrname" readonly/></p>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <p class="routeDetails">Route Number: <input id="txtrno" class="input-sm" style="margin-left: 272px" type="text" id="txtlname" readonly/></p>
-                    <p class="routeDetails">Time: <input id="txtrtime" style="margin-left: 334px" type="text" readonly/></p>
-                    <p class="routeDetails">Number of passengers: <input id="txtpno" style="margin-left: 224px" type="text" readonly/></p>
-                    <p class="routeDetails"> Passenger Assistant: <input id="txtpassist" style="margin-left: 240px" type="text" readonly/></p>
-                    <p class="routeDetails">Accessibility Requirements: </p>
-                    <input id="txtraccess" style="width: 100%;" class="routeInput" type="text" readonly/>
-                </div>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<?php include 'routePopUp.php'?>
 <script>
     $('table tr td').on('click',function(){
         $("#myModal").modal("show");
         var routeName = $(this).closest('tr').children()[0].textContent;
-        $.ajax({
-            url: 'api.php',
-            data: "route_name=" + routeName,
-            dataType:'json'
-            success: function(data){
-                var routeNo = data[4];
-                var time = data[5];
-                var passNo = data[6];
-                var passAssist = data[7];
-                var access = data[8];
-
-                $("#txtrname").val(routeName);
-                $("#txtrno").val(routeNo);
-                $("#txtrtime").val(time);
-                $("#txtpno").val(passNo);
-                $("#txtpassist").val(passAssist);
-                $("#txtraccess").val(access);
-            }
-        })
+        $("#txtrname").val(routeName);
     });
 </script>
 </html>
