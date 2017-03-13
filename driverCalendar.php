@@ -213,8 +213,8 @@
 <script>
     $('table tr td').on('click',function(){
         $("#myModal").modal("show");
-        $("#txtfname").val($(this).closest('tr').children()[0].textContent);
-        $("#txtlname").val($(this).closest('tr').children()[0].textContent);
+        var routeName = $(this).closest('tr').children()[0].textContent;
+        $("#txtrname").val(routeName);
     });
 </script>
 </html>

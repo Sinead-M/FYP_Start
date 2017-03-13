@@ -15,4 +15,4 @@ $val = 'Route 3';
 $result = mysql_query("SELECT * FROM $tableName where route_name ='$val'");
 $array = mysql_fetch_array($result);
 
-echo $array;
+echo json_encode($array);

@@ -32,11 +32,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="tuesday">
@@ -66,11 +66,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="wednesday">
@@ -100,11 +100,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="thursday">
@@ -134,11 +134,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="friday">
@@ -168,11 +168,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="saturday">
@@ -202,11 +202,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="sunday">
@@ -236,35 +236,16 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button style='width: 100%; height: 30px'> Add Route </button> </td>";
+                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
         }
-        Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
+        Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
 </div>
-<html>
-<div class="password-Modal" id="myModal">
-    <div class="modal-dialog">
-        <div class="route-modal-content">
-            <div class="password-modal-header">
-                <p><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtrname" readonly/></p>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <p class="routeDetails">Route Number: <input id="txtrno" class="input-sm" style="margin-left: 272px" type="text" id="txtlname" readonly/></p>
-                    <p class="routeDetails">Time: <input id="txtrtime" style="margin-left: 334px" type="text" readonly/></p>
-                    <p class="routeDetails">Number of passengers: <input id="txtpno" style="margin-left: 224px" type="text" readonly/></p>
-                    <p class="routeDetails"> Passenger Assistant: <input id="txtpassist" style="margin-left: 240px" type="text" readonly/></p>
-                    <p class="routeDetails">Accessibility Requirements: </p>
-                    <input id="txtraccess" style="width: 100%;" class="routeInput" type="text" readonly/>
-                </div>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<?php include 'AdminRoutePopUp.php' ?>
 <script>
     $('table tr td').on('click',function(){
         $("#myModal").modal("show");

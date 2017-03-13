@@ -236,10 +236,13 @@
                 data: {},
                 dataType: 'json',
                 success: function (data) {
-                    var item = JSON.parse(data);
+                    var id = data[0];              //get id
+                    var vname = data[1];
                     var htmlData = '<ul><li>';
-                    htmlData += item.driver;
-                    htmlData += '</li></ul>';
+                    htmlData += id;
+                    htmlData += '</li><li>';
+                    htmlData += vname;
+                    htmlData += '</li></ul>'
                     $('#myModal').find('#modal-body').html(htmlData);
                 }
             });
