@@ -1,8 +1,8 @@
 <?php include 'inc/config.php'?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <script src="js/bootstrap.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <div class="calendarContainer">
     <div class="monday">
@@ -15,17 +15,17 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading">' . $column['driver'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">'. $column['route_name'] ."</td>";
+                Print '<td class="rows">'. $column['route_name'] ."</td>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
                     Print "<tr>";
-                    Print '<td class="heading">'. $row['route_name'] ."</td>";
+                    Print '<td class="rows">'. $row['route_name'] ."</td>";
                     Print "</tr>";
                 }
                 Print "</table>";
@@ -44,17 +44,17 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+            Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['driver'] . "</td>";
+            Print '<th class="heading">' . $column['driver'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['route_name'] ."</td>";
+            Print '<td class="rows">'. $column['route_name'] ."</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading"><input type="submit" name="name" class="routeButton" value="'. $row['route_name'] .'">';"</td>";
+                Print '<td class="rows">'. $row['route_name'] ."</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -73,17 +73,17 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+            Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['driver'] . "</td>";
+            Print '<th class="heading">' . $column['driver'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['route_name'] ."</td>";
+            Print '<td class="rows">'. $column['route_name'] ."</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading">'. $row['route_name'] ."</td>";
+                Print '<td class="rows">'. $row['route_name'] ."</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -102,17 +102,17 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+            Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['driver'] . "</td>";
+            Print '<th class="heading">' . $column['driver'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['route_name'] ."</td>";
+            Print '<td class="rows">'. $column['route_name'] ."</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading">'. $row['route_name'] ."</td>";
+                Print '<td class="rows">'. $row['route_name'] ."</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -131,17 +131,17 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+            Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['driver'] . "</td>";
+            Print '<th class="heading">' . $column['driver'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['route_name'] ."</td>";
+            Print '<td class="rows">'. $column['route_name'] ."</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading">'. $row['route_name'] ."</td>";
+                Print '<td class="rows">'. $row['route_name'] ."</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -160,17 +160,17 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+            Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['driver'] . "</td>";
+            Print '<th class="heading">' . $column['driver'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['route_name'] ."</td>";
+            Print '<td class="rows">'. $column['route_name'] ."</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading">'. $row['route_name'] ."</td>";
+                Print '<td class="rows">'. $row['route_name'] ."</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -189,17 +189,17 @@
             $column = mysql_fetch_array($query);
             Print "<table class='table'>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['vehicle_no'] ."</td>";
+            Print '<th class="heading">'. $column['vehicle_no'] ."</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">' . $column['driver'] . "</td>";
+            Print '<th class="heading">' . $column['driver'] . "</th>";
             Print "</tr>";
             Print "<tr>";
-            Print '<td class="heading">'. $column['route_name'] ."</td>";
+            Print '<td class="rows">'. $column['route_name'] ."</td>";
             Print "</tr>";
             while ($row = mysql_fetch_array($query)) {
                 Print "<tr>";
-                Print '<td class="heading">'. $row['route_name'] ."</td>";
+                Print '<td class="rows">'. $row['route_name'] ."</td>";
                 Print "</tr>";
             }
             Print "</table>";
@@ -209,6 +209,7 @@
         ?>
     </div>
 </div>
+<?php include 'routePopUp.php'?>
 <script>
     $('table tr td').on('click',function(){
         $("#myModal").modal("show");

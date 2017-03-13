@@ -1,8 +1,8 @@
 <?php include 'inc/config.php'?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <script src="js/bootstrap.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <div class="calendarContainer">
     <div class="monday">
@@ -36,7 +36,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }
+        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
     <div class="tuesday">
@@ -70,7 +70,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }
+        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
     <div class="wednesday">
@@ -104,7 +104,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }
+        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
     <div class="thursday">
@@ -138,7 +138,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }
+        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
     <div class="friday">
@@ -172,7 +172,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }
+        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
     <div class="saturday">
@@ -206,7 +206,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }
+        }Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
     <div class="sunday">
@@ -241,6 +241,7 @@
                 Print "</table>";
             }
         }
+        Print "<button style='width: 100%; height: 30px; margin-top: 10px;'> Add Bus </button>";
         ?>
     </div>
 </div>

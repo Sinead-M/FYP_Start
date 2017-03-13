@@ -12,14 +12,6 @@
 <!--                </a>-->
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <p class="routeDetails">Route Number: <input id="txtrno" class="input-sm" style="margin-left: 272px" type="text" id="txtlname" readonly/></p>
-                    <p class="routeDetails">Time: <input id="txtrtime" style="margin-left: 334px" type="text" readonly/></p>
-                    <p class="routeDetails">Number of passengers: <input id="txtpno" style="margin-left: 224px" type="text" readonly/></p>
-                    <p class="routeDetails"> Passenger Assistant: <input id="txtpassist" style="margin-left: 240px" type="text" readonly/></p>
-                    <p class="routeDetails">Accessibility Requirements: </p>
-                    <input id="txtraccess" style="width: 100%;" class="routeInput" type="text" readonly/>
-                </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

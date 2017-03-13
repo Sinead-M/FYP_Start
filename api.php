@@ -11,8 +11,8 @@ include 'inc/config.php';
 $con = mysql_connect($host, $user, $pass);
 $dbs = mysql_select_db($databaseName, $con);
 
-$val = $_POST['val'];
-$result = mysql_query("SELECT * FROM $tableName where driver ='$val'");
+$val = 'Route 3';
+$result = mysql_query("SELECT * FROM $tableName where route_name ='$val'");
 $array = mysql_fetch_array($result);
 
-echo json_encode($array);
+echo $array;

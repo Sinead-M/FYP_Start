@@ -18,10 +18,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['driver'] . "</th>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -49,10 +49,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['driver'] . "</th>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -80,10 +80,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['driver'] . "</th>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -111,10 +111,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['driver'] . "</th>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -142,10 +142,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['driver'] . "</th>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -173,10 +173,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['driver'] . "</th>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -204,10 +204,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -222,34 +222,28 @@
         }
         ?>
     </div>
+    <div class="test"></div>
 </div>
 <?php include 'routePopUp.php'?>
 <script>
-    $('table tr td').on('click',function(){
-        $("#myModal").modal("show");
-        var routeName = $(this).closest('tr').children()[0].textContent;
-        $("#txtrname").val(routeName);
+        $('table tr td').on('click',function(){
+            var routeName = $(this).closest('tr').children()[0].textContent;
+            $("#txtrname").val(routeName);
 
-        $.ajax({
-            url: 'api.php',
-            type: "POST",
-            data: {val: routeName},
-            dataType: 'json',
-            success: function (data) {
-                var routeNo = data[4];
-                var time = data[5];
-                var passNo = data[6];
-                var passAssist = data[7];
-                var access = data[8];
-
-                $("#txtrname").val(routeName);
-                $("#txtrno").val(routeNo);
-                $("#txtrtime").val(time);
-                $("#txtpno").val(passNo);
-                $("#txtpassist").val(passAssist);
-                $("#txtraccess").val(access);
-            }
-        })
-    });
+            $.ajax({
+                url: 'api.php',
+                type: "POST",
+                data: {},
+                dataType: 'json',
+                success: function (data) {
+                    var item = JSON.parse(data);
+                    var htmlData = '<ul><li>';
+                    htmlData += item.driver;
+                    htmlData += '</li></ul>';
+                    $('#myModal').find('#modal-body').html(htmlData);
+                }
+            });
+            $('#myModal').modal('show');
+        });
 </script>
 </html>
