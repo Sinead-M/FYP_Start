@@ -1,41 +1,49 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <body>
-<div id="addBusModal" class="password-Modal">
+<div id="addBusModal" class="bus-Modal">
 
     <!-- Modal content -->
-    <div class="logout-modal-content">
+    <div class="addBus-modal-content">
         <div class="password-modal-header">
             <h2>Add Bus</h2>
         </div>
         <div class="password-modal-body">
             <div class="container">
                 <form action="add.php" method="post">
-                    <div class="form-input">
-                        <input type="text" name="vehicleNumber" required="required" placeholder="Vehicle Number" />
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="driverName" required="required" placeholder="Driver Name" />
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="routeName" required="required" placeholder="Route Name" />
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="routeNo" placeholder="Route Number" />
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="passNo" required="required" placeholder="Number of Passengers" />
-                    </div>
-                    <div class="form-input">
-                        <input type="time" name="time" placeholder="Time" />
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="assPass" placeholder="Passenger Assistant" />
-                    </div>
-                    <div class="form-input">
-                        <input type="text" name="access" placeholder="Access Requirements" />
-                    </div>
-                    <input type="submit" value="Add" class="btn-login"/>
-                    <button id="close" class="btn-cancel">Cancel</button>
+                    <p class="routeDetails">Vehicle Number: </p>
+                    <input type="text" style="width:100%"name="vehicleNumber" required="required"/>
+
+                    <p class="routeDetails">Driver Name: </p>
+                    <input type="text" style="width:100%"name="driverName" required="required"/>
+
+                    <p class="routeDetails">Route Name: </p>
+                    <input type="text" style="width:100%"name="routeName" required="required"/>
+
+                    <p class="routeDetails">Route Number: </p>
+                    <input type="text" style="width:100%"name="routeNumber"/>
+
+                    <p class="routeDetails">Time: </p>
+                    <input type="time" style="width:100%"name="time" required="required"/>
+
+                    <p class="routeDetails">Number of passengers: </p>
+                    <input type="text" style="width:100%"name="passNum"/>
+
+                    <p class="routeDetails">Passenger Assistant: </p>
+                    <input type="text" style="width:100%"name="passAssist"/>
+
+                    <p class="routeDetails">Accessibility Requirements: </p>
+                    <input type="text" style="width:100%"name="access"/>
+
+                    <input type="checkbox" name="days" value="Monday"> Monday
+                    <input type="checkbox" name="days" value="Tuesday"> Tuesday
+                    <input type="checkbox" name="days" value="Wednesday"> Wednesday
+                    <input type="checkbox" name="days" value="Thursday"> Thursday
+                    <input type="checkbox" name="days" value="Friday"> Friday <br>
+                    <input type="checkbox" name="days" value="Saturday"> Saturday
+                    <input type="checkbox" name="days" value="Sunday"> Sunday
+
+                    <input type="submit" style="margin-top: 40px" value="Add" class="btn-login"/>
+                    <button id="close" style="margin-top: 40px"class="btn-cancel">Cancel</button>
                 </form>
             </div>
         </div>

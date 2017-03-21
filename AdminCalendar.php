@@ -67,11 +67,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
+                Print "<td> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button class='addBus'> Add Bus </button>";
+        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="wednesday">
@@ -101,11 +101,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
+                Print "<td> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button class='addBus'> Add Bus </button>";
+        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="thursday">
@@ -135,11 +135,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
+                Print "<td> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button class='addBus'> Add Bus </button>";
+        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="friday">
@@ -169,11 +169,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
+                Print "<td> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button class='addBus'> Add Bus </button>";
+        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="saturday">
@@ -207,7 +207,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button class='addBus'> Add Bus </button>";
+        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="sunday">
@@ -242,7 +242,7 @@
                 Print "</table>";
             }
         }
-        Print "<button class='addBus'> Add Bus </button>";
+        Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
 </div>
