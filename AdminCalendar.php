@@ -4,6 +4,7 @@
     <script src="jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
+<body>
 <div class="calendarContainer">
     <div class="monday">
         <div class="weekdays">
@@ -36,7 +37,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button class='addBus'> Add Bus </button>";
+        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="tuesday">
@@ -253,4 +254,6 @@
         $("#txtrname").val(routeName);
     });
 </script>
+<?php include 'addBusModal.php'?>
+</body>
 </html>

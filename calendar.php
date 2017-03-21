@@ -21,7 +21,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -52,7 +52,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -83,7 +83,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -114,7 +114,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -145,7 +145,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -176,7 +176,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -207,7 +207,7 @@
                 Print '<th class="heading"><p>Vehicle: ' . $column['vehicle_no'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<th class="heading"><p>Driver: ' . $column['driver'] . "</p></th>";
+                Print '<th class="heading"><p class="driver">Driver: ' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -222,31 +222,73 @@
         }
         ?>
     </div>
-    <div class="test"></div>
-</div>
+<!--    <button id="infobutton"> Get information</button>-->
 <?php include 'routePopUp.php'?>
 <script>
-        $('table tr td').on('click',function(){
-            var routeName = $(this).closest('tr').children()[0].textContent;
-            $("#txtrname").val(routeName);
+    $('table tr td').click(function() {
+        var routeName = $(this).text();
+        $("#txtrname").val(routeName);
+    });
 
-            $.ajax({
-                url: 'api.php',
-                type: "POST",
-                data: {},
-                dataType: 'json',
-                success: function (data) {
-                    var id = data[0];              //get id
-                    var vname = data[1];
-                    var htmlData = '<ul><li>';
-                    htmlData += id;
-                    htmlData += '</li><li>';
-                    htmlData += vname;
-                    htmlData += '</li></ul>'
-                    $('#myModal').find('#modal-body').html(htmlData);
-                }
-            });
-            $('#myModal').modal('show');
+//    $('#infobutton').on('click', function(){
+//        $(function () {
+//            $.ajax({
+//                url: 'api.php',
+//                data: {},
+//                dataType: 'json',
+//                success: function (data) {
+//                    var rname = data[4];              //get id
+//                    var time = data[6];
+//                    var passn = data[5];
+//                    var passist = data[7];
+//                    var access = data[8];//get name
+//                    //--------------------------------------------------------------------
+//                    // 3) Update html content
+//                    //--------------------------------------------------------------------
+//                    $('#container').html("<p>Route Number: <input type='text' value='"+rname+"'readonly/></p><p> Time: <input type='text' value='"+time+"' readonly/></p><p> Number of passengers: <input type='text' value='"+passn+"'readonly/></p><p> Passenger Assistant: <input type='text' value='"+passist+"' readonly/></p><p> Accessibility Requirements: <input type='text' value='"+access+"' readonly/></p>"); //Set output element html
+//                    //$('#myModal').find('#container').html("<p>Route Number: <input type='text' value='"+rname+"'readonly/></p><p> Time: <input type='text' value='"+time+"' readonly/></p><p> Number of passengers: <input type='text' value='"+passn+"'readonly/></p><p> Passenger Assistant: <input type='text' value='"+passist+"' readonly/></p><p> Accessibility Requirements: <input type='text' value='"+access+"' readonly/></p>");
+//                }
+//            });
+//            //$('#myModal').modal('show');
+//        });
+//    });
+    $(document).ready(function () {
+        $('.driver').each(function(){
+            if($(this).text() == 'Driver: Michael Shanahan'){
+                $(this).css({backgroundColor: 'coral'});
+            }else if ($(this).text() == 'Driver: Neil Crowley'){
+                $(this).css({backgroundColor: 'aquamarine'});
+            } else if($(this).text() == 'Driver: Anthony Walsh'){
+                $(this).css({backgroundColor: 'bisque'});
+            } else if($(this).text() == 'Driver: Danny O Sullivan'){
+                $(this).css({backgroundColor: 'cornflowerblue'});
+            } else if($(this).text() == 'Driver: Charlie Nelligan'){
+                $(this).css({backgroundColor: 'red'});
+            } else if($(this).text() == 'Driver: John O Donoghue'){
+                $(this).css({backgroundColor: 'yellow'});
+            } else if($(this).text() == 'Driver: TJ Nelligan'){
+                $(this).css({backgroundColor: 'chartreuse'});
+            } else if($(this).text() == 'Driver: John Fitzgerald'){
+                $(this).css({backgroundColor: 'pink'});
+            } else if($(this).text() == 'Driver: Tommy Templeman'){
+                $(this).css({backgroundColor: 'blueviolet'});
+            } else if($(this).text() == 'Driver: Breda Breen'){
+                $(this).css({backgroundColor: 'aqua'});
+            } else if($(this).text() == 'Driver: Gerry Lenihan'){
+                $(this).css({backgroundColor: 'darksalmon'});
+            } else if($(this).text() == 'Driver: James Clifford'){
+                $(this).css({backgroundColor: 'fuchsia'});
+            }
+
         });
+
+    });
+//    $('.heading').each(function(){
+//        var driver = document.getElementById("driver").value;
+//        //alert(driver);
+//        if(driver =="undefined"){
+//            $(".table").addClass("green");
+//        }
+//    });
 </script>
 </html>
