@@ -34,13 +34,13 @@
                     <p class="routeDetails">Accessibility Requirements: </p>
                     <input type="text" style="width:100%"name="access"/>
 
-                    <input type="checkbox" name="days" value="Monday"> Monday
-                    <input type="checkbox" name="days" value="Tuesday"> Tuesday
-                    <input type="checkbox" name="days" value="Wednesday"> Wednesday
-                    <input type="checkbox" name="days" value="Thursday"> Thursday
-                    <input type="checkbox" name="days" value="Friday"> Friday <br>
-                    <input type="checkbox" name="days" value="Saturday"> Saturday
-                    <input type="checkbox" name="days" value="Sunday"> Sunday
+                    <input type="checkbox" name="Monday"> Monday
+                    <input type="checkbox" name="Tuesday"> Tuesday
+                    <input type="checkbox" name="Wednesday"> Wednesday
+                    <input type="checkbox" name="Thursday"> Thursday
+                    <input type="checkbox" name="Friday"> Friday <br>
+                    <input type="checkbox" name="Saturday"> Saturday
+                    <input type="checkbox" name="Sunday"> Sunday
 
                     <input type="submit" style="margin-top: 40px" value="Add" class="btn-login"/>
                     <button id="close" style="margin-top: 40px"class="btn-cancel">Cancel</button>
