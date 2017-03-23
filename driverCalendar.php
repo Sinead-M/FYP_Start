@@ -211,10 +211,41 @@
 </div>
 <?php include 'routePopUp.php'?>
 <script>
-    $('table tr td').on('click',function(){
-        $("#myModal").modal("show");
-        var routeName = $(this).closest('tr').children()[0].textContent;
-        $("#txtrname").val(routeName);
+    $(document).ready(function(){
+        $('table tr td').click(function() {
+            var routeName = $(this).text();
+            $("#txtrname").val(routeName);
+            var driverName = $(this).closest('table').find('th').text();
+            $.ajax({
+                type: "POST",
+                url: "api.php",
+                data: {route: routeName,
+                    driver: driverName },
+                dataType: 'json',
+                success: function (data) {
+                    $("#myModal").modal('show');
+                    var vname = data[1];
+                    var driver = data[2];
+                    var rname = data[3];
+                    var rnum = data[4];
+                    var passnum = data[5];
+                    var time = data[6];
+                    var passassist = data[7];
+                    var access = data[8];
+
+                    $("#vehicleNumber").val(vname);
+                    $("#driverName").val(driver);
+                    $("#routeName").val(rname);
+                    $("#routeNumber").val(rnum);
+                    $("#time").val(time);
+                    $("#passNum").val(passnum);
+                    $("#passAssist").val(passassist);
+                    $("#access").val(access);
+
+                }
+            });
+
+        });
     });
 </script>
 </html>

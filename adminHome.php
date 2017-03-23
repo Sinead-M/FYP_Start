@@ -20,8 +20,10 @@ $name = $namearray['full_name'];
 ?>
 <body>
 <h2 class="welcome" style="margin-left: 20px; text-align: inherit;">Hello <?php Print "$name"?>!</h2>
+<a href="register.php" style="margin-left: 20px; text-decoration: none; color: black"> Show next week >> </a><br/>
+</body>
+<br/>
 <?php include 'AdminCalendar.php'; ?>
 <?php include 'logoutModal.php'?>
-</body>
 </html>
 

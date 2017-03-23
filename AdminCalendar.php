@@ -19,10 +19,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
+                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -37,7 +37,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="tuesday">
@@ -56,7 +56,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -71,7 +71,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="wednesday">
@@ -90,7 +90,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -105,7 +105,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="thursday">
@@ -124,7 +124,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -139,7 +139,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="friday">
@@ -158,7 +158,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -173,7 +173,7 @@
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="saturday">
@@ -192,7 +192,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -203,11 +203,11 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
+                Print "<td><button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
-        }Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
     <div class="sunday">
@@ -226,7 +226,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading">' . $column['driver'] . "</td>";
+                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -237,23 +237,98 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button <button class='addRoute'> Add Route </button> </td>";
+                Print "<td><button class='addRoute'> Add Route </button></td>";
                 Print "</tr>";
                 Print "</table>";
             }
         }
-        Print "<button id='addBusBtn' class='addBus'> Add Bus </button>";
+        Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
 </div>
 <?php include 'AdminRoutePopUp.php' ?>
+<?php include 'addBusModal.php'?>
+<?php include 'addRouteModal.php'?>
 <script>
-    $('table tr td').on('click',function(){
-        $("#myModal").modal("show");
-        var routeName = $(this).closest('tr').children()[0].textContent;
-        $("#txtrname").val(routeName);
+    $(document).ready(function(){
+        $('table tr td').click(function() {
+            var routeName = $(this).text();
+            $("#txtrname").val(routeName);
+            var driverName = $(this).closest('table').find('th').text();
+            $.ajax({
+                type: "POST",
+                url: "api.php",
+                data: {route: routeName,
+                    driver: driverName },
+                dataType: 'json',
+                success: function (data) {
+                    $("#myModal").modal('show');
+                    var vname = data[1];
+                    var driver = data[2];
+                    var rname = data[3];
+                    var rnum = data[4];
+                    var passnum = data[5];
+                    var time = data[6];
+                    var passassist = data[7];
+                    var access = data[8];
+
+                    $("#vehicleNumber").val(vname);
+                    $("#driverName").val(driver);
+                    $("#routeName").val(rname);
+                    $("#routeNumber").val(rnum);
+                    $("#time").val(time);
+                    $("#passNum").val(passnum);
+                    $("#passAssist").val(passassist);
+                    $("#access").val(access);
+
+                }
+            });
+
+        });
+    });
+
+    $(".addRoute").on('click', function(){
+        var driverName = $(this).closest('table').find('th').text();
+        alert(driverName);
+        $("#addRouteModal").modal("show");
+    });
+
+    $(".addBus").on('click', function() {
+        $("#addBusModal").modal("show");
+    });
+
+    $(document).ready(function () {
+        $('.driver').each(function(){
+            if($(this).text() == 'Michael Shanahan'){
+                $(this).css({backgroundColor: 'coral'});
+            }else if ($(this).text() == 'Neil Crowley'){
+                $(this).css({backgroundColor: 'aquamarine'});
+            } else if($(this).text() == 'Anthony Walsh'){
+                $(this).css({backgroundColor: 'bisque'});
+            } else if($(this).text() == 'Danny O Sullivan'){
+                $(this).css({backgroundColor: 'cornflowerblue'});
+            } else if($(this).text() == 'Charlie Nelligan'){
+                $(this).css({backgroundColor: 'red'});
+            } else if($(this).text() == 'John O Donoghue'){
+                $(this).css({backgroundColor: 'yellow'});
+            } else if($(this).text() == 'TJ Nelligan'){
+                $(this).css({backgroundColor: 'chartreuse'});
+            } else if($(this).text() == 'John Fitzgerald'){
+                $(this).css({backgroundColor: 'pink'});
+            } else if($(this).text() == 'Tommy Templeman'){
+                $(this).css({backgroundColor: 'blueviolet'});
+            } else if($(this).text() == 'Breda Breen'){
+                $(this).css({backgroundColor: 'aqua'});
+            } else if($(this).text() == 'Gerry Lenihan'){
+                $(this).css({backgroundColor: 'darksalmon'});
+            } else if($(this).text() == 'James Clifford'){
+                $(this).css({backgroundColor: 'fuchsia'});
+            }
+
+        });
+
     });
 </script>
-<?php include 'addBusModal.php'?>
+
 </body>
 </html>

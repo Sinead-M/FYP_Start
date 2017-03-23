@@ -12,6 +12,31 @@
                 </a>
             </div>
             <div class="modal-body">
+                <div class="container">
+                    <p class="routeDetails">Vehicle Number: </p>
+                    <input type="text" style="width:100%" id="vehicleNumber"/>
+
+                    <p class="routeDetails">Driver Name: </p>
+                    <input type="text" style="width:100%" id="driverName"/>
+
+                    <p class="routeDetails">Route Name: </p>
+                    <input type="text" style="width:100%" id="routeName"/>
+
+                    <p class="routeDetails">Route Number: </p>
+                    <input type="text" style="width:100%" id="routeNumber"/>
+
+                    <p class="routeDetails">Time: </p>
+                    <input type="text" style="width:100%" id="time"/>
+
+                    <p class="routeDetails">Number of passengers: </p>
+                    <input type="text" style="width:100%" id="passNum"/>
+
+                    <p class="routeDetails">Passenger Assistant: </p>
+                    <input type="text" style="width:100%" id="passAssist"/>
+
+                    <p class="routeDetails">Accessibility Requirements: </p>
+                    <input type="text" style="width:100%" id="access"/>
+                </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

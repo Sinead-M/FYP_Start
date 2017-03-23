@@ -1,11 +1,11 @@
 <html xmlns="http://www.w3.org/1999/html">
 <body>
-<div id="addBusModal" class="bus-Modal">
+<div id="addRouteModal" class="bus-Modal">
 
     <!-- Modal content -->
     <div class="addBus-modal-content">
         <div class="password-modal-header">
-            <h2>Add Bus</h2>
+            <h2>Add Route</h2>
         </div>
         <div class="password-modal-body">
             <div class="container">

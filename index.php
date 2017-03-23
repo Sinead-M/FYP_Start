@@ -14,9 +14,9 @@
     ?>
     <body>
     <?php
-        echo "<h1>Week 1</h1>";
+        echo "<h1 style='margin-left: 20px'>Week 13</h1>";
     ?>
-    <a href="register.php"> Click here to register </a><br/>
+    <a href="register.php" style="margin-left: 20px; text-decoration: none; color: black"> Show next week >> </a><br/>
     </body>
     <br/>
     <?php include 'calendar.php'; ?>

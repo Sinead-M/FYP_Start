@@ -20,6 +20,8 @@
     ?>
     <body>
         <h2 class="welcome">Hello <?php Print "$name"?>!</h2>
+        <a href="register.php" style="margin-left: 20px; text-decoration: none; color: black"> Show next week >> </a><br/>
+    <br/>
         <button id="changePassword" class="button">Change Password</button>
         <?php include 'driverCalendar.php'; ?>
         <?php include 'changePasswordModal.php'; ?>
