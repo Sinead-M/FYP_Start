@@ -7,7 +7,7 @@
             <div class="password-modal-header">
                 <h2>Are you sure you want to logout?</h2>
             </div>
-            <div class="password-modal-body">
+            <div class="modal-body">
                 <div class="container">
                     <form action="logout.php" method="post">
                         <input type="submit" value="Logout" class="btn-login"/>

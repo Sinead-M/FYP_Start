@@ -19,10 +19,10 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='table'>";
                 Print "<tr>";
-                Print '<th class="heading">' . $column['vehicle_no'] . "</th>";
+                Print '<td class="heading"><p class="vehicle">' . $column['vehicle_no'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -33,7 +33,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='notme'> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -56,7 +56,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -90,7 +90,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -124,7 +124,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -158,7 +158,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -192,7 +192,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -226,7 +226,7 @@
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="driver">' . $column['driver'] . "</p></td>";
+                Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
@@ -251,7 +251,7 @@
 <?php include 'addRouteModal.php'?>
 <script>
     $(document).ready(function(){
-        $('table tr td').click(function() {
+        $('table tr td').on('click' ,function() {
             var routeName = $(this).text();
             $("#txtrname").val(routeName);
             var driverName = $(this).closest('table').find('th').text();
@@ -262,7 +262,7 @@
                     driver: driverName },
                 dataType: 'json',
                 success: function (data) {
-                    $("#myModal").modal('show');
+                    $("#myAdminModal").modal('show');
                     var vname = data[1];
                     var driver = data[2];
                     var rname = data[3];
@@ -280,7 +280,6 @@
                     $("#passNum").val(passnum);
                     $("#passAssist").val(passassist);
                     $("#access").val(access);
-
                 }
             });
 
@@ -289,8 +288,10 @@
 
     $(".addRoute").on('click', function(){
         var driverName = $(this).closest('table').find('th').text();
-        alert(driverName);
+        var vehicle = $(this).closest('table').find('#vehicle').text();
         $("#addRouteModal").modal("show");
+        $("#driverName").val(driverName);
+        alert(driverName);
     });
 
     $(".addBus").on('click', function() {

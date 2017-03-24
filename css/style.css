@@ -109,26 +109,13 @@ p{
 }
 .password-Modal {
     display: none; /* Hidden by default */
-    position: absolute; /* Stay in place */
+    position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    /*overflow: auto; !* Enable scroll if needed *!*/
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-.bus-Modal{
-    display: none; /* Hidden by default */
-    position: absolute; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    padding-bottom: 100px;
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 180%; /* Full height */
     /*overflow: auto; !* Enable scroll if needed *!*/
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -148,20 +135,6 @@ p{
     animation-name: animatetop;
     animation-duration: 0.4s
 }
-.route-modal-content{
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 50%;
-    height: 607px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
 .password-modal-content {
     position: relative;
     background-color: #fefefe;
@@ -169,12 +142,18 @@ p{
     padding: 0;
     border: 1px solid #888;
     width: 50%;
-    height: 420px;
+    height: 88%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
+}
+
+.password-modal-body{
+    overflow: auto;
+    height:86%;
+    padding: 2px 16px;
 }
 
 /* Add Animation */
@@ -211,8 +190,6 @@ p{
     color: white;
     text-align: center;
 }
-
-.password-modal-body {padding: 2px 16px;}
 
 .routeButton{
     background: white;
@@ -255,7 +232,7 @@ p{
     padding: 0;
     border: 1px solid #888;
     width: 50%;
-    height: 100%;
+    height: 88%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;

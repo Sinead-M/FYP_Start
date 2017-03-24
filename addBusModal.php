@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/html">
 <body>
-<div id="addBusModal" class="bus-Modal">
+<div id="addBusModal" class="password-Modal">
 
     <!-- Modal content -->
     <div class="addBus-modal-content">

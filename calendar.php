@@ -237,7 +237,7 @@
                 driver: driverName },
                 dataType: 'json',
                 success: function (data) {
-                $("#myModal").modal('show');
+                $("#myDetailsModal").modal('show');
                     var vname = data[1];
                     var driver = data[2];
                     var rname = data[3];

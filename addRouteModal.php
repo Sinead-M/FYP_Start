@@ -1,20 +1,20 @@
 <html xmlns="http://www.w3.org/1999/html">
 <body>
-<div id="addRouteModal" class="bus-Modal">
+<div id="addRouteModal" class="password-Modal">
 
     <!-- Modal content -->
     <div class="addBus-modal-content">
         <div class="password-modal-header">
             <h2>Add Route</h2>
         </div>
-        <div class="password-modal-body">
+        <div class="password-modal-body" >
             <div class="container">
                 <form action="add.php" method="post">
                     <p class="routeDetails">Vehicle Number: </p>
-                    <input type="text" style="width:100%"name="vehicleNumber" required="required"/>
+                    <input type="text" style="width:100%" id="vehicleNumber" name="vehicleNumber" required="required"/>
 
                     <p class="routeDetails">Driver Name: </p>
-                    <input type="text" style="width:100%"name="driverName" required="required"/>
+                    <input type="text" style="width:100%" id="driverName" name="driverName" required="required"/>
 
                     <p class="routeDetails">Route Name: </p>
                     <input type="text" style="width:100%"name="routeName" required="required"/>
@@ -52,7 +52,7 @@
 </div>
 <script>
     // Get the modal
-    var addBusmodal = document.getElementById('addBusModal');
+    var addRoutemodal = document.getElementById('addRouteModal');
 
     var cancelbtn = document.getElementById("close");
 
@@ -64,8 +64,8 @@
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == addBusmodal) {
-            addBusmodal.style.display = "none";
+        if (event.target == addRoutemodal) {
+            addRoutemodal.style.display = "none";
         }
     }
 </script>

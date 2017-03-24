@@ -10,17 +10,17 @@
             <div class="password-modal-body">
                 <div class="container">
                     <form action="changePasswordCheck.php" method="post">
-                        <div class="form-input">
-                            <input type="password" name="currentPassword" required="required" placeholder="Enter current Password" />
-                        </div>
-                        <div class="form-input">
-                            <input type="password" name="newPassword" required="required" placeholder="Enter new Password" />
-                        </div>
-                        <div class="form-input">
-                            <input type="password" name="confirmPassword" required="required" placeholder="Confirm new Password" />
-                        </div>
-                        <input type="submit" value="Change" class="btn-login"/>
-                        <button id="close" class="btn-cancel">Cancel</button>
+                        <p class="routeDetails">Current Password: </p>
+                        <input type="password" name="currentPassword" required="required" style="width: 100%;" />
+
+                        <p class="routeDetails">New Password: </p>
+                        <input type="password" name="newPassword" required="required" style="width: 100%;" />
+
+                        <p class="routeDetails">Confirm Password </p>
+                        <input type="password" name="confirmPassword" required="required" style="width: 100%;" />
+
+                        <input style="margin-top: 150px;" type="submit" value="Change" class="btn-login"/>
+                        <button style="margin-top: 150px;" id="close" class="btn-cancel">Cancel</button>
                     </form>
                 </div>
             </div>
