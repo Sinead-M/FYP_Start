@@ -13,7 +13,7 @@ else{
 }
 ?>
 <body>
-<h2 class="heading">Admin Login</h2>
+<h2 class="loginHeading">Admin Login</h2>
 <!--        <a href="index.php">Click here to go back</a><br/>-->
 <div class="container">
 <form action="checkAdminLogin.php" method="post">

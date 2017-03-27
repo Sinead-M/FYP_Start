@@ -46,18 +46,6 @@
             $sunday = "yes";
         }
 
-        Print "$vehicle";
-        Print "$driverName";
-        Print "$routeName";
-        Print "$time";
-        Print "$monday";
-        Print "$tuesday";
-        Print "$wednesday";
-        Print "$thursday";
-        Print "$friday";
-        Print "$saturday";
-        Print "$sunday";
-
         mysql_connect("localhost", "root", "") or die(mysql_error());
         mysql_select_db("kerry_flyer") or die("Cannot connect to database");
 

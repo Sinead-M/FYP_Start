@@ -1,3 +1,4 @@
+/*Button Styles*/
 .button{
     display: inline-block;
     padding: 15px 25px;
@@ -10,75 +11,7 @@
     right: 20px;
     cursor: pointer;
 }
-.welcome{
-    margin-top: 44px;
-    margin-left: 30px;
-    text-align: left;
 
-}
-.calendarContainer{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday{
-    display:inline-block;
-    width: 100%;
-    margin: 10px;
-}
-.weekdays{
-    display:inline-block;
-    border: 1px solid black;
-    border-radius: 40px;
-    width: inherit;
-}
-.table{
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: inherit;
-    border: ridge;
-    margin-top: 10px;
-}
-.rows {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-    cursor: pointer;
-}
-.heading{
-    font-weight: bold;
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-}
-
-h2{
-    text-align: center;
-}
-.heading{
-    width: 100%;
-    text-align: center;
-    margin-top: 50px;
-}
-.container{
-    width: calc(100% - 150px);
-    height:400px;
-    text-align: center;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-input[type="text"],input[type="password"]{
-    height: 45px;
-    width: 300px;
-    font-size: 20px;
-    margin: auto;
-    margin-bottom: 20px;
-    background-color: #fff;
-    text-align: center;
-}
 .btn-login1{
     padding: 15px 25px;
     color: #fff;
@@ -104,23 +37,121 @@ input[type="text"],input[type="password"]{
     background-color: #8EB529;
     border-bottom: 4px solid #779E29;
 }
+
+.routeButton{
+    background: white;
+    font-size: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.edit{
+    width: 60px;
+    height: 50px;
+}
+
+.delete{
+    width: 60px;
+    height: 50px;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Headings throughout interface*/
+.welcome{
+    margin-top: 44px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+h2{
+    text-align: center;
+}
+.loginHeading{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*Calendar Styles*/
+.calendarContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.calendarDays{
+    display:inline-block;
+    width: 100%;
+    margin: 10px;
+}
+
+.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: inherit;
+    border: ridge;
+    margin-top: 10px;
+}
+.weekdays{
+    display:inline-block;
+    border: 1px solid black;
+    border-radius: 40px;
+    width: inherit;
+}
+.rows {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+}
+.heading{
+    font-weight: bold;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.container{
+    width: calc(100% - 150px);
+    height:400px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+input[type="text"],input[type="password"]{
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
 p{
     color: #000000;
 }
+
+/*Modal Styles*/
 .password-Modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 50px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    /*overflow: auto; !* Enable scroll if needed *!*/
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
 .logout-modal-content{
     position: relative;
     background-color: #fefefe;
@@ -167,36 +198,15 @@ p{
     to {top:0; opacity:1}
 }
 
-/* The Close Button */
-.btn-cancel{
-    float: left;
-    padding: 15px 25px;
-    color: #fff;
-    border: none;
-    background-color: #8EB529;
-    border-bottom: 4px solid #779E29;
-}
-
-.btn-cancel:hover,
-.btn-cancel:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .password-modal-header {
     padding: 2px 16px;
     background-color: #8EB529;
     color: white;
     text-align: center;
+    display: flex;
 }
 
-.routeButton{
-    background: white;
-    font-size: inherit;
-    border: none;
-    cursor: pointer;
-}
+
 .routeDetails{
     text-align: left;
 }
@@ -214,15 +224,6 @@ p{
     margin-top: 10px;
     background-color: #8EB529;
     border-bottom: 4px solid #779E29;
-}
-.edit{
-    width: 60px;
-    height: 50px;
-}
-
-.delete{
-    width: 60px;
-    height: 50px;
 }
 
 .addBus-modal-content{

@@ -34,7 +34,7 @@
                     <p class="routeDetails">Accessibility Requirements: </p>
                     <input type="text" style="width:100%"name="access"/>
 
-                    <input type="checkbox" name="Monday"> Monday
+                    <input type="checkbox" checked disabled name="Monday"> Monday
                     <input type="checkbox" name="Tuesday"> Tuesday
                     <input type="checkbox" name="Wednesday"> Wednesday
                     <input type="checkbox" name="Thursday"> Thursday

@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="calendarContainer">
-    <div class="monday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Monday</h2>
         </div>
@@ -17,7 +17,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND monday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='monday'>";
                 Print "<tr>";
                 Print '<td class="heading"><p class="vehicle">' . $column['vehicle_no'] . "</p></td>";
                 Print "</tr>";
@@ -40,7 +40,7 @@
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
-    <div class="tuesday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Tuesday</h2>
         </div>
@@ -51,7 +51,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND tuesday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='tuesday'>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
@@ -74,7 +74,7 @@
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
-    <div class="wednesday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Wednesday</h2>
         </div>
@@ -85,7 +85,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND wednesday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='wednesday'>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
@@ -108,7 +108,7 @@
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
-    <div class="thursday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Thursday</h2>
         </div>
@@ -119,7 +119,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND thursday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='thursday'>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
@@ -142,7 +142,7 @@
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
-    <div class="friday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Friday</h2>
         </div>
@@ -153,7 +153,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND friday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='friday'>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
@@ -176,7 +176,7 @@
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
-    <div class="saturday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Saturday</h2>
         </div>
@@ -187,7 +187,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND saturday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='saturday'>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
@@ -210,7 +210,7 @@
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
-    <div class="sunday">
+    <div class="calendarDays">
         <div class="weekdays">
             <h2>Sunday</h2>
         </div>
@@ -221,7 +221,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND sunday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='table'>";
+                Print "<table class='sunday'>";
                 Print "<tr>";
                 Print '<td class="heading">' . $column['vehicle_no'] . "</td>";
                 Print "</tr>";
@@ -255,6 +255,8 @@
             var routeName = $(this).text();
             $("#txtrname").val(routeName);
             var driverName = $(this).closest('table').find('th').text();
+            var weekday = $(this).closest('table').attr('class');
+            alert(weekday);
             $.ajax({
                 type: "POST",
                 url: "api.php",
