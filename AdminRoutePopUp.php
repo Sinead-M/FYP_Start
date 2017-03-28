@@ -5,7 +5,7 @@
             <div class="password-modal-header">
                 <img class="edit" id="editButton" style="cursor: pointer; margin-top: 22px; margin-left: 18px" src="img/pencil.png">
                 <p style="width: 100%;"><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtrname" readonly/></p>
-                <img class="delete" style="cursor: pointer; margin-top: 22px; margin-right: 18px" src="img/bin.png">
+                <img class="delete" onclick="deleteRoute()" style="cursor: pointer; margin-top: 22px; margin-right: 18px" src="img/bin.png">
             </div>
             <div class="password-modal-body">
                 <div class="container">
@@ -122,6 +122,40 @@
     $('#myAdminModal').on('shown.bs.modal', function () {
         $('#vehicleNumber').focus();
     });
+
+    function deleteRoute() {
+        var day ="";
+        var driverName = $('#driverName').val();
+        var routeName = $('#routeName').val();
+        if(document.getElementById('Monday').checked){
+            day = "monday";
+        } else if(document.getElementById('Tuesday').checked){
+             day = "tuesday";
+        } else if(document.getElementById('Wednesday').checked){
+             day = "wednesday";
+        } else if(document.getElementById('Thursday').checked){
+             day = "thursday";
+        } else if(document.getElementById('Friday').checked){
+             day = "friday";
+        } else if(document.getElementById('Saturday').checked){
+             day = "saturday";
+        } else if(document.getElementById('Sunday').checked){
+             day = "sunday";
+        }
+        $.ajax({
+            type: "POST",
+            url: "deleteApi.php",
+            data: {route: routeName,
+                driver: driverName,
+                weekday: day },
+            dataType: 'json',
+            success: function (data) {
+                alert(data.success);
+                window.location.reload();
+            }
+        });
+
+    }
 </script>
 </body>
 </html>

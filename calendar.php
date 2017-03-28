@@ -202,7 +202,7 @@
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND sunday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
-                Print "<table class='sunday'>";
+                Print "<table class='saturday'>";
                 Print "<tr>";
                 Print '<td class="heading"><p>' . $column['vehicle_no'] . "</p></td>";
                 Print "</tr>";

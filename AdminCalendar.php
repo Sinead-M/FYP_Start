@@ -251,7 +251,7 @@
 <?php include 'addRouteModal.php'?>
 <script>
     $(document).ready(function(){
-        $('table tr td').on('click', "td:not(.noModal)" ,function() {
+        $('table tr td').on('click' ,function() {
             var routeName = $(this).text();
             $("#txtrname").val(routeName);
             var driverName = $(this).closest('table').find('th').text();
