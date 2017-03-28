@@ -214,16 +214,15 @@ p{
 .addRoute{
     width: 100%;
     height: 30px;
-    background-color: #8EB529;
-    border-bottom: 4px solid #779E29;
+    background-color: antiquewhite;
+
 }
 
 .addBus{
     width: 100%;
     height: 30px;
     margin-top: 10px;
-    background-color: #8EB529;
-    border-bottom: 4px solid #779E29;
+    background-color: antiquewhite;
 }
 
 .addBus-modal-content{

@@ -5,7 +5,7 @@
         <!-- Modal content -->
         <div class="logout-modal-content">
             <div class="password-modal-header">
-                <h2>Are you sure you want to logout?</h2>
+                <h2 style="width: 100%;">Are you sure you want to logout?</h2>
             </div>
             <div class="modal-body">
                 <div class="container">

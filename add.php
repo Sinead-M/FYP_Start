@@ -1,4 +1,5 @@
 <?php
+    include 'inc/config.php';
     session_start();
     if($_SESSION['user']){
     }
@@ -45,9 +46,6 @@
         if($_POST['Sunday'] !=null ){
             $sunday = "yes";
         }
-
-        mysql_connect("localhost", "root", "") or die(mysql_error());
-        mysql_select_db("kerry_flyer") or die("Cannot connect to database");
 
         mysql_query("INSERT INTO routes (vehicle_no, driver, route_name, route_no, passenger_no, time, passenger_assist, access_req, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES ('$vehicle','$driverName','$routeName','$routeNumber','$numberPass','$time','$passAssist','$access','$monday', '$tuesday', '$wednesday','$thursday','$friday','$saturday','$sunday')");
         header('location: adminHome.php');

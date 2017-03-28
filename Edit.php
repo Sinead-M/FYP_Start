@@ -1,96 +1,54 @@
-<html>
-    <head>
-        <title>My first PHP Website</title>
-    </head>
-    <?php
-        session_start();
-        if($_SESSION['user']){
-        }
-        else{
-            header("location:index.php");
-        }
-        $user = $_SESSION['user'];
-        $id_exists = false;
-        ?>
-        <body>
-            <h2> Home Page </h2>
-            <p> Hello <?php Print "$user" ?>!</p>
-            <a href="logout.php">Click here to logout</a><br/><br/>
-            <a href="driverHome.php">Return to Home Page </a>
-            <h2 align = "center"> Currently Selected </h2>
-            <table border="1px" width="100%">
-                <tr>
-                    <th>Id</th>
-                    <th>Details</th>
-                    <th>Post Time</th>
-                    <th>Edit Time</th>
-                    <th>Public Post</th>
-                </tr>
-                <?php
-                if(!empty($_GET['id']))
-                {
-                    $id = $_GET['id'];
-                    $_SESSION['id'] = $id;
-                    $id_exists = true;
-                    mysql_connect("localhost", "root", "") or die(mysql_error());
-                    mysql_select_db("first_db") or die("Cannot connect to database");
-                    $query = mysql_query("Select * from list Where id='$id'");
-                    $count = mysql_num_rows($query);
-                    if($count > 0) {
-                        while ($row = mysql_fetch_array($query)) {
-                            Print "<tr>";
-                            Print '<td align="center">' . $row['id'] . "</td>";
-                            Print '<td align="center">' . $row['details'] . "</td>";
-                            Print '<td align="center">' . $row['date_posted'] . " - " . $row['time_posted'] . "</td>";
-                            Print '<td align="center">' . $row['date_edited'] . " - " . $row['time_edited'] . "</td>";
-                            Print '<td align="center">' . $row['public'] . "</td>";
-                            Print "</tr>";
-                        }
-                    }
-                    else
-                    {
-                        $id_exists = false;
-                    }
-
-                }
-                ?>
-            </table>
-            <br/>
-            <?php
-            if($id_exists)
-            {
-                Print '<form action="edit.php" method="POST"> 
-                    Enter new detail: <input type="text" name="details"/><br/>
-                    public post? <input type="checkbox" name="public[]" value="yes"/><br/>
-                     <input type="submit" value="Update list"/>
-                </form>
-                ';
-            }
-            else
-            {
-                Print '<h2 align="center"> There is no data to be edited.</h2>';
-            }
-            ?>
-        </body>
-</html>
 <?php
-    if($_SERVER['REQUEST_METHOD'] == "POST")
-    {
-        mysql_connect("localhost", "root", "") or die(mysql_error());
-        mysql_select_db("first_db") or die("Cannot connect to database");
-        $details = mysql_real_escape_string($_POST['details']);
-        $public = "no";
-        $id = $_SESSION['id'];
-        $time = strftime("%X");
-        $date = strftime("%B %d, %Y");
+session_start();
+if($_SESSION['user']){
+}
+else{
+    header("location:index.php");
+}
 
-        foreach($_POST['public'] as $list)
-        {
-            if($list != null)
-            {
-                $public = "yes";
-            }
-        }
-        mysql_query("UPDATE list SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'");
+if($_SERVER['REQUEST_METHOD'] = "POST") {
+    $vehicle = $_POST['vehicleNumber'];
+    $driverName = $_POST['driverName'];
+    $routeName = $_POST['routeName'];
+    $routeNumber = $_POST['routeNumber'];
+    $time = $_POST['time'];
+    $numberPass = $_POST['passNum'];
+    $passAssist = $_POST['passAssist'];
+    $access = $_POST['access'];
+
+    mysql_connect("localhost", "root", "") or die(mysql_error());
+    mysql_select_db("kerry_flyer") or die("Cannot connect to database");
+
+    if ($_POST['Monday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND monday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
     }
-?>
+    if ($_POST['Tuesday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND tuesday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
+    }
+    if ($_POST['Wednesday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND wednesday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
+    }
+    if ($_POST['Thursday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND thursday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
+    }
+    if ($_POST['Friday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND friday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
+    }
+    if ($_POST['Saturday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND saturday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
+    }
+    if ($_POST['Sunday-true'] != null) {
+        mysql_query("UPDATE routes SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND sunday='yes'");
+        Print '<script>alert("This route has been updated");</script>';
+    }
+    Print '<script>window.location.assign("adminHome.php");</script>';
+
+
+}
+

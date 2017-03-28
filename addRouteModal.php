@@ -5,7 +5,7 @@
     <!-- Modal content -->
     <div class="addBus-modal-content">
         <div class="password-modal-header">
-            <h2>Add Route</h2>
+            <h2 style="width: 100%;">Add Route</h2>
         </div>
         <div class="password-modal-body" >
             <div class="container">

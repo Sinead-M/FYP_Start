@@ -33,7 +33,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td class='notme'> <button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='noModal'> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -67,7 +67,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='noModal'> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -101,7 +101,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='noModal'> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -135,7 +135,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='noModal'><button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -169,7 +169,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td> <button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='noModal'><button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -203,7 +203,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td><button class='addRoute'> Add Route </button> </td>";
+                Print "<td class='noModal'><button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -237,7 +237,7 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
-                Print "<td><button class='addRoute'> Add Route </button></td>";
+                Print "<td class='noModal'><button class='addRoute'> Add Route </button></td>";
                 Print "</tr>";
                 Print "</table>";
             }
@@ -251,12 +251,33 @@
 <?php include 'addRouteModal.php'?>
 <script>
     $(document).ready(function(){
-        $('table tr td').on('click' ,function() {
+        $('table tr td').on('click', "td:not(.noModal)" ,function() {
             var routeName = $(this).text();
             $("#txtrname").val(routeName);
             var driverName = $(this).closest('table').find('th').text();
             var weekday = $(this).closest('table').attr('class');
-            alert(weekday);
+            if(weekday === "monday"){
+                $("#Monday").attr('checked', true);
+                $("#Monday-true").attr('checked', true);
+            } else if(weekday === "tuesday"){
+                $("#Tuesday").attr('checked', true);
+                $("#Tuesday-true").attr('checked', true);
+            } else if(weekday === "wednesday"){
+                $("#Wednesday").attr('checked', true);
+                $("#Wednesday-true").attr('checked', true);
+            } else if(weekday === "thursday"){
+                $("#Thursday").attr('checked', true);
+                $("#Thursday-true").attr('checked', true);
+            } else if(weekday === "friday"){
+                $("#Friday").attr('checked', true);
+                $("#Friday-true").attr('checked', true);
+            } else if(weekday === "saturday"){
+                $("#Saturday").attr('checked', true);
+                $("#Saturday-true").attr('checked', true);
+            } else if(weekday === "sunday"){
+                $("#Sunday").attr('checked', true);
+                $("#Sunday-true").attr('checked', true);
+            }
             $.ajax({
                 type: "POST",
                 url: "api.php",

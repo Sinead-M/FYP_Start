@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="addBus-modal-content">
             <div class="password-modal-header">
-                <p><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtrname" readonly/></p>
+                <p style="width: 100%;"><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtrname" readonly/></p>
             </div>
             <div class="password-modal-body">
                 <div class="container">
@@ -43,8 +43,12 @@
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == routeModal) {
-            routeModal.style.display = "none";
+            $("#myDetailsModal").modal('hide');
         }
-    }
+    };
+
+    $('#myDetailsModal').on('shown.bs.modal', function () {
+        $('#vehicleNumber').focus();
+    });
 </script>
 </html>

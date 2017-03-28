@@ -14,11 +14,11 @@
     ?>
     <body>
     <?php
-        echo "<h1 style='margin-left: 20px'>Week 13</h1>";
+        echo "<h1 style='margin-left: 20px'>Week 14</h1>";
     ?>
-    <a href="index-weektwo.php" style="margin-left: 20px; text-decoration: none; color: black"> Show next week >> </a><br/>
+    <a href="index.php" style="margin-left: 20px; text-decoration: none; color: black"><< Show Previous week </a><br/>
     </body>
     <br/>
-    <?php include 'calendar.php'; ?>
-    <?php include 'logoutModal.php'?>
+    <?php include 'calendar-weektwo.php'; ?>
+    <?php include 'logoutModal.php' ?>
 </html>
