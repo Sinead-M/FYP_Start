@@ -288,6 +288,22 @@
                 $(this).css({backgroundColor: 'darksalmon'});
             } else if($(this).text() == 'James Clifford'){
                 $(this).css({backgroundColor: 'fuchsia'});
+            } else if($(this).text() == 'Donal Forde') {
+                $(this).css({backgroundColor: 'cadetblue'});
+            } else if($(this).text() == 'Pat Galvin') {
+                $(this).css({backgroundColor: 'thistle'});
+            } else if($(this).text() == 'Jimmy Kearney') {
+                $(this).css({backgroundColor: 'darkcyan'});
+            } else if($(this).text() == 'Matt O Donoghue') {
+                $(this).css({backgroundColor: 'darkgrey'});
+            } else if($(this).text() == 'Frank Neylon') {
+                $(this).css({backgroundColor: 'deeppink'});
+            } else if($(this).text() == 'Michael Nolan') {
+                $(this).css({backgroundColor: 'forestgreen'});
+            } else if($(this).text() == 'Michael Brosnan') {
+                $(this).css({backgroundColor: 'gold'});
+            } else if($(this).text() == 'Gerard Brosnan'){
+                $(this).css({backgroundColor: 'brown'});
             }
 
         });

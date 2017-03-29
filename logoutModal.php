@@ -8,7 +8,7 @@
                 <h2 style="width: 100%;">Are you sure you want to logout?</h2>
             </div>
             <div class="modal-body">
-                <div class="container">
+                <div style="height: 103px" class="container">
                     <form action="logout.php" method="post">
                         <input type="submit" value="Logout" class="btn-login"/>
                     </form>

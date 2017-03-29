@@ -23,7 +23,7 @@ $name = $namearray['full_name'];
 <a href="adminHome.php" style="margin-left: 20px; text-decoration: none; color: black"> << Show Previous Week </a><br/>
 </body>
 <br/>
-<?php include 'AdminCalendar-weektwo.php'; ?>
+<?php include 'AdminCalendar-week2.php'; ?>
 <?php include 'logoutModal.php'?>
 </html>
 
