@@ -7,18 +7,28 @@
     session_start();
     if(isset($_SESSION['user'])){
         require_once("headerLoggedin.php");
+         include 'logoutModal.php';
     }
     else{
         require_once("header.php");
     }
     ?>
     <body>
-    <?php
-        echo "<h1 style='margin-left: 20px'>Week 13</h1>";
-    ?>
-    <a href="index-weektwo.php" style="margin-left: 20px; text-decoration: none; color: black"> Show next week >> </a><br/>
+    <h1 id="week" style='margin-left: 20px'>Week 13</h1>
+    <a id="link" href="index-weektwo.php" style="margin-left: 20px; cursor: pointer; text-decoration: none; color: black" "> Show Next Week >> </a><br/>
     </body>
+    <?php include 'calendar.php' ?>
     <br/>
-    <?php include 'calendar.php'; ?>
-    <?php include 'logoutModal.php'?>
+<!--    <script>-->
+<!--        function changeCalendar(){-->
+<!--            alert($("#week").text());-->
+<!--            if($("#week").text() == "Week 13") {-->
+<!--                $("#week").html("Week 14");-->
+<!--                $("#link").html("<< Show Previous Week");-->
+<!--            } else if($("#week").text() == "Week 14"){-->
+<!--                $("#week").html("Week 13");-->
+<!--                $("#link").html("Show Next Week >>");-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
 </html>

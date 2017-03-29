@@ -10,7 +10,7 @@
             <h2>Monday</h2>
         </div>
         <?php
-            $query = mysql_query("Select * from routes WHERE driver = '$name' AND monday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND monday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='monday'>";
@@ -39,7 +39,7 @@
             <h2>Tuesday</h2>
         </div>
         <?php
-        $query = mysql_query("Select * from routes WHERE driver = '$name' AND tuesday = 'yes'");
+        $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND tuesday = 'yes'");
         if (mysql_num_rows($query) > 0) {
             $column = mysql_fetch_array($query);
             Print "<table class='tuesday'>";
@@ -68,7 +68,7 @@
             <h2>Wednesday</h2>
         </div>
         <?php
-        $query = mysql_query("Select * from routes WHERE driver = '$name' AND wednesday = 'yes'");
+        $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND wednesday = 'yes'");
         if (mysql_num_rows($query) > 0) {
             $column = mysql_fetch_array($query);
             Print "<table class='wednesday'>";
@@ -97,7 +97,7 @@
             <h2>Thursday</h2>
         </div>
         <?php
-        $query = mysql_query("Select * from routes WHERE driver = '$name' AND thursday = 'yes'");
+        $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND thursday = 'yes'");
         if (mysql_num_rows($query) > 0) {
             $column = mysql_fetch_array($query);
             Print "<table class='thursday'>";
@@ -126,7 +126,7 @@
             <h2>Friday</h2>
         </div>
         <?php
-        $query = mysql_query("Select * from routes WHERE driver = '$name' AND friday = 'yes'");
+        $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND friday = 'yes'");
         if (mysql_num_rows($query) > 0) {
             $column = mysql_fetch_array($query);
             Print "<table class='friday'>";
@@ -155,7 +155,7 @@
             <h2>Saturday</h2>
         </div>
         <?php
-        $query = mysql_query("Select * from routes WHERE driver = '$name' AND saturday = 'yes'");
+        $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND saturday = 'yes'");
         if (mysql_num_rows($query) > 0) {
             $column = mysql_fetch_array($query);
             Print "<table class='saturday'>";
@@ -184,7 +184,7 @@
             <h2>Sunday</h2>
         </div>
         <?php
-        $query = mysql_query("Select * from routes WHERE driver = '$name' AND sunday = 'yes'");
+        $query = mysql_query("Select * from routestwo WHERE driver = '$name' AND sunday = 'yes'");
         if (mysql_num_rows($query) > 0) {
             $column = mysql_fetch_array($query);
             Print "<table class='sunday'>";

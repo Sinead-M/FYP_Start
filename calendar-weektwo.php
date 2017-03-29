@@ -13,7 +13,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * FROM routes-weektwo WHERE driver = 'TJ Nelligan' AND monday = 'yes'");
+            $query = mysql_query("Select * FROM routestwo WHERE driver = '$drivername' AND monday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='monday'>";
@@ -44,7 +44,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * from routes-weektwo WHERE driver = '$drivername' AND tuesday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$drivername' AND tuesday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='tuesday'>";
@@ -75,7 +75,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * from routes-weektwo WHERE driver = '$drivername' AND wednesday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$drivername' AND wednesday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='wednesday'>";
@@ -106,7 +106,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * from routes-weektwo WHERE driver = '$drivername' AND thursday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$drivername' AND thursday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='thursday'>";
@@ -137,7 +137,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * from routes-weektwo WHERE driver = '$drivername' AND friday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$drivername' AND friday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='friday'>";
@@ -168,7 +168,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * from routes-weektwo WHERE driver = '$drivername' AND saturday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$drivername' AND saturday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='saturday'>";
@@ -199,7 +199,7 @@
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
             $drivername = $alldriversArray['full_name'];
-            $query = mysql_query("Select * from routes-weektwo WHERE driver = '$drivername' AND sunday = 'yes'");
+            $query = mysql_query("Select * from routestwo WHERE driver = '$drivername' AND sunday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='sunday'>";
