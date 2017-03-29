@@ -20,7 +20,7 @@
     ?>
     <body>
         <h2 class="welcome">Hello <?php Print "$name"?>!</h2>
-        <a href="driverHome-weektwo.php" style="margin-left: 20px; text-decoration: none; color: black"> Show next week >> </a><br/>
+        <a href="driverHome-weektwo.php" style="margin-left: 20px; text-decoration: none; color: black"> Show Next Week >> </a><br/>
     <br/>
         <button id="changePassword" class="button">Change Password</button>
         <?php include 'driverCalendar.php'; ?>
