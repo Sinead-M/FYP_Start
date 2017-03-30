@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="css/header.css">
     </head>
     <body>
+    <!--    Sets up the header displayed if the user is logged in-->
         <div class="header">
             <a href="index.php">
              <img src="img/logo.png">

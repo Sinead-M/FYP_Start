@@ -1,5 +1,6 @@
 <htmlxmlns="http://www.w3.org/1999/html">
 <body>
+<!--Details modal to provide the user with extra details about each route-->
 <div class="password-Modal" id="myDetailsModal">
         <div class="addBus-modal-content">
             <div class="password-modal-header">
@@ -46,6 +47,7 @@
         }
     };
 
+//    When the modal is opened the scroll position is reset back to the top each time
     $('#myDetailsModal').on('shown.bs.modal', function () {
         $('#vehicleNumber').focus();
     });

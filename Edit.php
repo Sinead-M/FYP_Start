@@ -6,6 +6,7 @@ else{
     header("location:index.php");
 }
 
+//Receives information for the form when a route is being edited and updates the data base Edit.php
 if($_SERVER['REQUEST_METHOD'] = "POST") {
     $vehicle = $_POST['vehicleNumber'];
     $driverName = $_POST['driverName'];

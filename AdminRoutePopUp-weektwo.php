@@ -9,7 +9,7 @@
             </div>
             <div class="password-modal-body">
                 <div class="container">
-                    <form action="Edit.php" method="post">
+                    <form action="Edit-weektwo.php" method="post">
                         <p class="routeDetails">Vehicle Number: </p>
                         <input type="text" style="width:100%" id="vehicleNumber" name="vehicleNumber"  readonly/>
 

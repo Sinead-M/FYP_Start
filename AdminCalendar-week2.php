@@ -280,7 +280,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "api.php",
+                url: "api-weektwo.php",
                 data: {route: routeName,
                     driver: driverName },
                 dataType: 'json',

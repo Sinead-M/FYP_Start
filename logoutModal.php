@@ -1,5 +1,6 @@
 <html>
 <body>
+<!--Modal for the logout feature contains confirmation question and cancel and confirm button-->
     <div id="logoutModal" class="password-Modal">
 
         <!-- Modal content -->
