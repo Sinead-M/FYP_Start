@@ -19,16 +19,5 @@
     </body>
     <?php include 'calendar.php' ?>
     <br/>
-<!--    <script>-->
-<!--        function changeCalendar(){-->
-<!--            alert($("#week").text());-->
-<!--            if($("#week").text() == "Week 13") {-->
-<!--                $("#week").html("Week 14");-->
-<!--                $("#link").html("<< Show Previous Week");-->
-<!--            } else if($("#week").text() == "Week 14"){-->
-<!--                $("#week").html("Week 13");-->
-<!--                $("#link").html("Show Next Week >>");-->
-<!--            }-->
-<!--        }-->
-<!--    </script>-->
+
 </html>

@@ -5,9 +5,8 @@
     </head>
     <body>
         <div class="header">
-            <a href="index.php">
              <img src="img/logo.png">
-            </a>
+
             <button id="logout" class="login2">Logout</button>
         </div>
     </body>

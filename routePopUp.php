@@ -1,6 +1,6 @@
-<html>
+<htmlxmlns="http://www.w3.org/1999/html">
+<body>
 <div class="password-Modal" id="myDetailsModal">
-    <div class="modal-dialog">
         <div class="addBus-modal-content">
             <div class="password-modal-header">
                 <p style="width: 100%;"><input style="background: #8EB529; border: none; color: white; width: 100%;" type="text" class="input-sm" id="txtrname" readonly/></p>
@@ -32,9 +32,8 @@
                     <input type="text" style="width:100%" id="access" readonly/>
                 </div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+</div>
 
 <script>
     // Get the modal
@@ -51,4 +50,5 @@
         $('#vehicleNumber').focus();
     });
 </script>
+</body>
 </html>

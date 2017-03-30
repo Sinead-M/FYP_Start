@@ -310,10 +310,10 @@
     });
 
     $(".addRoute").on('click', function(){
-        var driverName = $(this).closest('table').find('th').text();
+        var driverNameadmin = $(this).closest('table').find('th').text();
         var vehicle = $(this).closest('table').find('#vehicle').text();
         $("#addRouteModal").modal("show");
-        $("#driverName").val(driverName);
+        $("#driverNameadd").val(driverNameadmin);
     });
 
     $(".addBus").on('click', function() {

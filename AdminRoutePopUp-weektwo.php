@@ -50,7 +50,7 @@
                         <input type="checkbox" id="Saturday-true" name="Saturday-true" hidden>
                         <input type="checkbox" id="Sunday-true" name="Sunday-true" hidden>
 
-                        <input id="edit" type="submit"  value="Change" class="btn-login" style="visibility: hidden;"/>
+                        <input id="edit" type="submit"  value="Change" class="btn-login" style="visibility: hidden; margin-top: 16px"/>
 
                     </form>
                     <button id="closeModal" class="btn-cancel" style="visibility: hidden">Cancel</button>

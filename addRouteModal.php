@@ -9,12 +9,12 @@
         </div>
         <div class="password-modal-body" >
             <div class="container">
-                <form action="add.php" method="post">
+                <form id="addRouteForm" action="add.php" method="post">
                     <p class="routeDetails">Vehicle Number: </p>
-                    <input type="text" style="width:100%" id="vehicleNumber" name="vehicleNumber" required="required"/>
+                    <input type="text" style="width:100%" id="vehicleNumber" name="vehicleNumber" required="required" />
 
                     <p class="routeDetails">Driver Name: </p>
-                    <input type="text" style="width:100%" id="driverName" name="driverName" required="required"/>
+                    <input type="text" style="width:100%" id="driverNameadd" name="driverName" required="required" readonly/>
 
                     <p class="routeDetails">Route Name: </p>
                     <input type="text" style="width:100%"name="routeName" required="required"/>
@@ -43,8 +43,8 @@
                     <input type="checkbox" name="Sunday"> Sunday
 
                     <input type="submit" style="margin-top: 40px" value="Add" class="btn-login"/>
-                    <button id="close" style="margin-top: 40px"class="btn-cancel">Cancel</button>
                 </form>
+                <button id="closeAddModal" style="margin-top: 5px"class="btn-cancel">Cancel</button>
             </div>
         </div>
     </div>
@@ -54,20 +54,29 @@
     // Get the modal
     var addRoutemodal = document.getElementById('addRouteModal');
 
-    var cancelbtn = document.getElementById("close");
+    var cancelbtn = document.getElementById("closeAddModal");
 
 
     // When the user clicks on <span> (x), close the modal
     cancelbtn.onclick = function() {
         addBusmodal.style.display = "none";
-    }
+    };
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == addRoutemodal) {
             addRoutemodal.style.display = "none";
+            $('#myAdminModal').modal('hide');
         }
-    }
+    };
+
+    $("#addRouteModal").on('hidden.bs.modal', function () {
+        document.getElementById('addRouteForm').reset();
+    });
+
+    $('#addRouteModal').on('shown.bs.modal', function () {
+        $('#vehicleNumber').focus();
+    });
 </script>
 </body>
 </html>
