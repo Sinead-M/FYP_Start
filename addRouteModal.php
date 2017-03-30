@@ -44,7 +44,7 @@
 
                     <input type="submit" style="margin-top: 40px" value="Add" class="btn-login"/>
                 </form>
-                <button id="closeAddModal" style="margin-top: 5px"class="btn-cancel">Cancel</button>
+                <button id="closeAddModal" style="margin-top: 5px" class="btn-cancel">Cancel</button>
             </div>
         </div>
     </div>
@@ -59,7 +59,9 @@
 
     // When the user clicks on <span> (x), close the modal
     cancelbtn.onclick = function() {
-        addBusmodal.style.display = "none";
+        $('#addRouteModal').modal('hide');
+        $('#myAdminModal').modal('hide');
+        $('#myAdminModal2').modal('hide');
     };
 
     // When the user clicks anywhere outside of the modal, close it

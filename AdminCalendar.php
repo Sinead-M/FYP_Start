@@ -312,15 +312,12 @@
     $(".addRoute").on('click', function(){
         var driverNameadmin = $(this).closest('table').find('th').text();
         var vehicle = $(this).closest('table').find('#vehicle').text();
+        $('#myAdminModal').on('shown.bs.modal', function () {
+            $('#myAdminModal').modal('hide');
+        });
         $("#addRouteModal").modal("show");
         $("#driverNameadd").val(driverNameadmin);
-        alert(vehicle);
     });
-
-    if($('#addRouteModal').is(':visible')) {
-        $('#myAdminModal').modal('hide');
-        alert("This modal is open");
-    }
 
     $(".addBus").on('click', function() {
         $("#addBusModal").modal("show");

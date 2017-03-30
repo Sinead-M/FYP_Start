@@ -19,6 +19,7 @@ $namearray = mysql_fetch_array($namequery);
 $name = $namearray['full_name'];
 ?>
 <body>
+<h1 id="week" style='margin-left: 20px'>Week 13</h1>
 <h2 class="welcome" style="margin-left: 20px; text-align: inherit;">Hello <?php Print "$name"?>!</h2>
 <a href="adminHome-week2.php" style="margin-left: 20px; text-decoration: none; color: black"> Show Next Week >> </a><br/>
 </body>

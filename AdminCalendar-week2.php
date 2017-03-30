@@ -312,6 +312,9 @@
     $(".addRoute").on('click', function(){
         var driverNameadmin = $(this).closest('table').find('th').text();
         var vehicle = $(this).closest('table').find('#vehicle').text();
+        $('#myAdminModal2').on('shown.bs.modal', function () {
+            $('#myAdminModal2').modal('hide');
+        });
         $("#addRouteModal").modal("show");
         $("#driverNameadd").val(driverNameadmin);
     });
