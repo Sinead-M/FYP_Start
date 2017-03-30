@@ -19,13 +19,13 @@
 
         } else {
             Print '<script>alert("Passwords do not match");</script>';
-            header("location: driverHome.php");
+            Print '<script>window.location.assign("driverHome.php");</script>';
         }
 
     }
     else {
         Print '<script>alert("Incorrect Password!");</script>';
-        header("location: driverHome.php");
+        Print '<script>window.location.assign("driverHome.php");</script>';
     }
 
 ?>

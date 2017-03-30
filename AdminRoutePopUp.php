@@ -123,37 +123,42 @@
     });
 
     function deleteRoute() {
-        var day ="";
-        var driverName = $('#driverName').val();
-        var routeName = $('#routeName').val();
-        if(document.getElementById('Monday').checked){
-            day = "monday";
-        } else if(document.getElementById('Tuesday').checked){
-             day = "tuesday";
-        } else if(document.getElementById('Wednesday').checked){
-             day = "wednesday";
-        } else if(document.getElementById('Thursday').checked){
-             day = "thursday";
-        } else if(document.getElementById('Friday').checked){
-             day = "friday";
-        } else if(document.getElementById('Saturday').checked){
-             day = "saturday";
-        } else if(document.getElementById('Sunday').checked){
-             day = "sunday";
-        }
-        $.ajax({
-            type: "POST",
-            url: "deleteApi.php",
-            data: {route: routeName,
-                driver: driverName,
-                weekday: day },
-            dataType: 'json',
-            success: function (data) {
-                alert(data.success);
-                window.location.reload();
+        if(confirm('Are you sure you want to delete this?')) {
+            var day = "";
+            var driverName = $('#driverName').val();
+            var routeName = $('#routeName').val();
+            if (document.getElementById('Monday').checked) {
+                day = "monday";
+            } else if (document.getElementById('Tuesday').checked) {
+                day = "tuesday";
+            } else if (document.getElementById('Wednesday').checked) {
+                day = "wednesday";
+            } else if (document.getElementById('Thursday').checked) {
+                day = "thursday";
+            } else if (document.getElementById('Friday').checked) {
+                day = "friday";
+            } else if (document.getElementById('Saturday').checked) {
+                day = "saturday";
+            } else if (document.getElementById('Sunday').checked) {
+                day = "sunday";
             }
-        });
-
+            $.ajax({
+                type: "POST",
+                url: "deleteApi.php",
+                data: {
+                    route: routeName,
+                    driver: driverName,
+                    weekday: day
+                },
+                dataType: 'json',
+                success: function (data) {
+                    alert(data.success);
+                    window.location.reload();
+                }
+            });
+        } else {
+            alert("This route was not deleted")
+        }
     }
 </script>
 </body>

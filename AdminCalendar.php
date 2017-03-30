@@ -19,7 +19,7 @@
                 $column = mysql_fetch_array($query);
                 Print "<table class='monday'>";
                 Print "<tr>";
-                Print '<td class="heading"><p class="vehicle">' . $column['vehicle_no'] . "</p></td>";
+                Print '<td class="vehicle" style="font-weight: bold; border: 1px solid #dddddd; text-align: center; padding: 8px;"><p>' . $column['vehicle_no'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
@@ -314,6 +314,7 @@
         var vehicle = $(this).closest('table').find('#vehicle').text();
         $("#addRouteModal").modal("show");
         $("#driverNameadd").val(driverNameadmin);
+        alert(vehicle);
     });
 
     if($('#addRouteModal').is(':visible')) {
