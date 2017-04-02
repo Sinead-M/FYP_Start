@@ -15,7 +15,7 @@
     ?>
     <body>
     <h1 id="week" style='margin-left: 20px'>Week 13</h1>
-    <a id="link" href="index-weektwo.php" style="margin-left: 20px; cursor: pointer; text-decoration: none; color: black" "> Show Next Week >> </a><br/>
+    <a id="link" href="index-weektwo.php" style="margin-left: 20px; cursor: pointer; text-decoration: none; color: black"> Show Next Week >> </a><br/>
     </body>
     <?php include 'calendar.php' ?>
     <br/>

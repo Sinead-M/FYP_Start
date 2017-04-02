@@ -2,8 +2,8 @@
 <body>
 <div id="addRouteModal" class="password-Modal">
 
-    <!-- Modal content -->
-    <div class="addBus-modal-content">
+    <!-- Creates the modal that holds the add route form-->
+    <div class="password-modal-content">
         <div class="password-modal-header">
             <h2 style="width: 100%;">Add Route</h2>
         </div>
@@ -51,20 +51,20 @@
 
 </div>
 <script>
-    // Get the modal
+    // Get the modal and close button by the ID
     var addRoutemodal = document.getElementById('addRouteModal');
 
     var cancelbtn = document.getElementById("closeAddModal");
 
 
-    // When the user clicks on <span> (x), close the modal
+    //    If the close button is clicked the modal will be hidden
     cancelbtn.onclick = function() {
         $('#addRouteModal').modal('hide');
         $('#myAdminModal').modal('hide');
         $('#myAdminModal2').modal('hide');
     };
 
-    // When the user clicks anywhere outside of the modal, close it
+    // if the user clicks outside the modal, the modal is hidden
     window.onclick = function(event) {
         if (event.target == addRoutemodal) {
             addRoutemodal.style.display = "none";
@@ -72,10 +72,12 @@
         }
     };
 
+    //    When the modal is hidden, the form is reset to be empty
     $("#addRouteModal").on('hidden.bs.modal', function () {
         document.getElementById('addRouteForm').reset();
     });
 
+    //    When the modal appears again the focus is on the first input so the scroll position is reset.
     $('#addRouteModal').on('shown.bs.modal', function () {
         $('#vehicleNumber').focus();
     });

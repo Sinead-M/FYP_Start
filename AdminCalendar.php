@@ -11,20 +11,24 @@
             <h2>Monday</h2>
         </div>
         <?php
+//      Sql request retrieves all the drivers names for the drivers table
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+//            While loops through all the names and requests all routes assigned to the driver name and the particular day of the week
             $drivername = $alldriversArray['full_name'];
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND monday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='monday'>";
                 Print "<tr>";
+//                The vehicle number and driver name are displayed on the table once
                 Print '<td class="vehicle" style="font-weight: bold; border: 1px solid #dddddd; text-align: center; padding: 8px;"><p>' . $column['vehicle_no'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
+//                Each route name is displayed after the driver name in seperate <TR>
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
@@ -33,13 +37,17 @@
                     Print "</tr>";
                 }
                 Print "<tr>";
+//                After the last route name is displayed an add route button is displayed
                 Print "<td class='noModal'> <button class='addRoute'> Add Route </button> </td>";
                 Print "</tr>";
                 Print "</table>";
             }
+//            After the table is finished an add bus button is displayed
         }Print "<button class='addBus'> Add Bus </button>";
         ?>
     </div>
+
+<!--THESE STEPS ARE REPEATED FOR EACH DAY OF THE WEEK    -->
     <div class="calendarDays">
         <div class="weekdays">
             <h2>Tuesday</h2>
@@ -246,16 +254,19 @@
         ?>
     </div>
 </div>
+<!--THE PHP FILES CONTAINING THE EXTRA MODALS ARE INCLUDED HERE-->
 <?php include 'AdminRoutePopUp.php' ?>
 <?php include 'addBusModal.php'?>
 <?php include 'addRouteModal.php'?>
 <script>
     $(document).ready(function(){
+//        Whenever a <td> is clicked the text in that <TD> and the closest <TH> are saved in variables
         $('table tr td').on('click' ,function() {
             var routeName = $(this).text();
             $("#txtrname").val(routeName);
             var driverName = $(this).closest('table').find('th').text();
             var weekday = $(this).closest('table').attr('class');
+//            checking what day the table clicked belongs to and sets the appropiate check box in the forms to "checked"
             if(weekday === "monday"){
                 $("#Monday").attr('checked', true);
                 $("#Monday-true").attr('checked', true);
@@ -278,6 +289,7 @@
                 $("#Sunday").attr('checked', true);
                 $("#Sunday-true").attr('checked', true);
             }
+//            Using ajax here Data can be requested and filled into the modal content without the page refreshing
             $.ajax({
                 type: "POST",
                 url: "api.php",
@@ -309,9 +321,9 @@
         });
     });
 
+    //    When the add route button is clicked the addroute modal is displayed and the usual modal is closed
     $(".addRoute").on('click', function(){
         var driverNameadmin = $(this).closest('table').find('th').text();
-        var vehicle = $(this).closest('table').find('#vehicle').text();
         $('#myAdminModal').on('shown.bs.modal', function () {
             $('#myAdminModal').modal('hide');
         });
@@ -319,10 +331,12 @@
         $("#driverNameadd").val(driverNameadmin);
     });
 
+    //    When the add route button is clicked the addroute modal is displayed
     $(".addBus").on('click', function() {
         $("#addBusModal").modal("show");
     });
 
+    //This sets the color of the driver name depending on who the driver is
     $(document).ready(function () {
         $('.driver').each(function(){
             if($(this).text() == 'Michael Shanahan'){

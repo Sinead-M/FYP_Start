@@ -7,6 +7,7 @@
         header("location:index.php");
     }
 
+//    Requests the information from the add route and add bus forms
     if($_SERVER['REQUEST_METHOD'] = "POST") {
         $vehicle = $_POST['vehicleNumber'];
         $driverName = $_POST['driverName'];
@@ -47,6 +48,7 @@
             $sunday = "yes";
         }
 
+//        Inserts the new information into the database and redirects the user back to the admin home page
         mysql_query("INSERT INTO routes (vehicle_no, driver, route_name, route_no, passenger_no, time, passenger_assist, access_req, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES ('$vehicle','$driverName','$routeName','$routeNumber','$numberPass','$time','$passAssist','$access','$monday', '$tuesday', '$wednesday','$thursday','$friday','$saturday','$sunday')");
         header('location: adminHome.php');
     }

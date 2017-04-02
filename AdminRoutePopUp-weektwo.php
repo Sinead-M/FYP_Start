@@ -1,3 +1,4 @@
+<!--THIS MODAL IS USED FOR THE SECOND WEEK AS THE INFORMATION IS SENT TO A SECOND WEEK DB TABLE. ALL FUNCTIONALITY IS THE SAME-->
 <html xmlns="http://www.w3.org/1999/html">
 <body>
 <div class="password-Modal" id="myAdminModal2">
