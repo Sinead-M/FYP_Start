@@ -13,6 +13,8 @@ img{
     width: 195px;
     height: 150px;
 }
+
+/* Styles the buttons in the header*/
 .login{
     display: inline-block;
     padding: 15px 25px;

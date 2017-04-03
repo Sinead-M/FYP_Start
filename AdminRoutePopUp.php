@@ -1,5 +1,7 @@
 <html xmlns="http://www.w3.org/1999/html">
 <body>
+<!--When the ajax request is sucessful the data retrieved is inserted into the form below.-->
+<!--Initially the inputs are set to be readonly-->
 <div class="password-Modal" id="myAdminModal">
         <div class="addBus-modal-content">
             <div class="password-modal-header">
@@ -59,11 +61,13 @@
 </div>
 
 <script>
-
+    // Get the modal and close and edit buttons by the ID
     var adminModal = document.getElementById("myAdminModal");
     var cancelBtn = document.getElementById("closeModal");
     var editBtn = document.getElementById("editButton");
 
+//    When the edit button is clicked some of the inputs are editable and information can be changed
+//    Also an Change and cancel button appear at the end of the form
     editBtn.onclick = function() {
         document.getElementById('routeNumber').removeAttribute('readonly');
         document.getElementById('time').removeAttribute('readonly');
@@ -82,6 +86,7 @@
         }
     };
 
+//    WHen the cancel button is clicked the buttons are hidden again and the inputs are back to readonly
     cancelBtn.onclick = function() {
         document.getElementById('closeModal').style.visibility='hidden';
         document.getElementById('edit').style.visibility='hidden';
@@ -93,6 +98,7 @@
         document.getElementById('access').setAttribute('readonly', 'readonly');
     };
 
+//    When the modal is closed the inputs are reset to readonly, the checkboxes are rest and the buttons are hidden
     $("#myAdminModal").on('hidden.bs.modal', function () {
         document.getElementById('routeName').setAttribute('readonly', 'readonly');
         document.getElementById('routeNumber').setAttribute('readonly', 'readonly');
@@ -118,10 +124,12 @@
         $("#Sunday-true").attr('checked', false);
     });
 
+//    when the modal is showing the scroll position is reset to the top
     $('#myAdminModal').on('shown.bs.modal', function () {
         $('#vehicleNumber').focus();
     });
 
+//    When the delete button is clicked ajax is used to delete the route from that particular day with a confirmation dialogue
     function deleteRoute() {
         if(confirm('Are you sure you want to delete this?')) {
             var day = "";

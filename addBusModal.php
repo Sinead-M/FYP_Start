@@ -2,8 +2,8 @@
 <body>
 <div id="addBusModal" class="password-Modal">
 
-    <!-- Modal content -->
-    <div class="addBus-modal-content">
+<!-- Creates the modal that holds the add bus form-->
+    <div class="password-modal-content">
         <div class="password-modal-header">
             <h2 style="width: 100%">Add Bus</h2>
         </div>
@@ -51,28 +51,29 @@
 
 </div>
 <script>
-    // Get the modal
+    // Get the modal and close button by the ID
     var addBusmodal = document.getElementById('addBusModal');
 
     var cancelbtn = document.getElementById("closeBusModal");
 
-
-    // When the user clicks on <span> (x), close the modal
+//    If the close button is clicked the modal will be hidden
     cancelbtn.onclick = function() {
         $("#addBusModal").modal('hide');
     };
 
-    // When the user clicks anywhere outside of the modal, close it
+    // if the user clicks outside the modal, the modal is hidden
     window.onclick = function(event) {
         if (event.target == addBusmodal) {
             addBusmodal.style.display = "none";
         }
     };
 
+//    When the modal is hidden, the form is reset to be empty
     $("#addBusModal").on('hidden.bs.modal', function () {
         document.getElementById('addBusForm').reset();
     });
 
+//    When the modal appears again the focus is on the first input so the scroll position is reset.
     $('#addBusModal').on('shown.bs.modal', function () {
         $('#vehicleNumber').focus();
     });
