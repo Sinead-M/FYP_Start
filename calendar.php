@@ -10,20 +10,24 @@
             <h2>Monday</h2>
         </div>
         <?php
+        //      Sql request retrieves all the drivers names for the drivers table
         $alldrivers = mysql_query("Select * from drivers");
         while ($alldriversArray = mysql_fetch_array($alldrivers)) {
+            //            While loops through all the names and requests all routes assigned to the driver name and the particular day of the week
             $drivername = $alldriversArray['full_name'];
             $query = mysql_query("Select * from routes WHERE driver = '$drivername' AND monday = 'yes'");
             if (mysql_num_rows($query) > 0) {
                 $column = mysql_fetch_array($query);
                 Print "<table class='monday'>";
                 Print "<tr>";
+                //                The vehicle number and driver name are displayed on the table once
                 Print '<td class="heading"><p>' . $column['vehicle_no'] . "</p></td>";
                 Print "</tr>";
                 Print "<tr>";
                 Print '<th class="heading"><p class="driver">' . $column['driver'] . "</p></th>";
                 Print "</tr>";
                 Print "<tr>";
+                //                Each route name is displayed after the driver name in seperate <TR>
                 Print '<td class="rows">' . $column['route_name'] . "</td>";
                 Print "</tr>";
                 while ($row = mysql_fetch_array($query)) {
@@ -35,6 +39,7 @@
             }
         }
         ?>
+        <!--THESE STEPS ARE REPEATED FOR EACH DAY OF THE WEEK    -->
     </div>
     <div class="calendarDays">
         <div class="weekdays">
@@ -223,9 +228,11 @@
         ?>
     </div>
     <div id="content"></div>
+    <!--THE PHP FILES CONTAINING THE EXTRA MODALS ARE INCLUDED HERE-->
 <?php include 'routePopUp.php'?>
 <script>
     $(document).ready(function(){
+        //        Whenever a <td> is clicked the text in that <TD> and the closest <TH> are saved in variables
         $('table tr td').click(function() {
             var routeName = $(this).text();
             $("#txtrname").val(routeName);
@@ -237,6 +244,7 @@
                 driver: driverName },
                 dataType: 'json',
                 success: function (data) {
+                    //            Using ajax here Data can be requested and filled into the modal content without the page refreshing
                 $("#myDetailsModal").modal('show');
                     var vname = data[1];
                     var driver = data[2];
@@ -261,7 +269,7 @@
 
         });
     });
-
+    //This sets the color of the driver name depending on who the driver is
     $(document).ready(function () {
         $('.driver').each(function(){
             if($(this).text() == 'Michael Shanahan'){

@@ -1,3 +1,4 @@
+<!--THIS IS THE CALENDAR FOR THE SECOND WEEK AND BEHAVES EXACTLY AS THE FIRST CALENDAR DOES-->
 <?php include 'inc/config.php' ?>
 <html xmlns="http://www.w3.org/1999/html">
 <head>

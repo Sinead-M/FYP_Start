@@ -2,7 +2,7 @@
     <body>
     <div id="passwordModal" class="password-Modal">
 
-        <!-- Modal content -->
+        <!-- Modal that holds the form for the password change -->
         <div class="password-modal-content">
             <div class="password-modal-header">
                 <h2 style="width: 100%">Change Password</h2>
@@ -28,24 +28,20 @@
 
     </div>
     <script>
-        // Get the modal
+        // Get the modal, the close button and the button that opens the modal by ID
         var passwordmodal = document.getElementById('passwordModal');
-
-        // Get the button that opens the modal
         var passwordbtn = document.getElementById("changePassword");
-
-        // Get the <span> element that closes the modal
         var closebtn = document.getElementById("close");
 
         // When the user clicks the button, open the modal
         passwordbtn.onclick = function() {
             passwordmodal.style.display = "block";
-        }
+        };
 
-        // When the user clicks on <span> (x), close the modal
+        // When the user clicks on the close button, close the modal
         closebtn.onclick = function() {
             passwordmodal.style.display = "none";
-        }
+        };
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {

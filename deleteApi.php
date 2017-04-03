@@ -2,11 +2,12 @@
 
 include 'inc/config.php';
 
-
+//gets the information from ajax for the second calendar
 $route =$_POST['route'];
 $driver = $_POST['driver'];
 $day = $_POST['weekday'];
 
+//Actually updates the routes and removes the day that it wants to be deleted from
 if($day === "monday") {
     mysql_query("UPDATE `routes` SET `monday`= 'no' WHERE driver = '$driver' AND route_name = '$route'");
     $message ="Route Deleted Successfully!";
@@ -29,6 +30,7 @@ if($day === "monday") {
     mysql_query("UPDATE `routes` SET `sunday`= 'no' WHERE driver = '$driver' AND route_name = '$route'");
     $message ="Route Deleted Successfully!";
 }
+//Returns a success message
 echo json_encode(array('success'=>$message));
 
 

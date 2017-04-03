@@ -37,7 +37,7 @@
 </div>
 
 <script>
-    // Get the modal
+    // Get the modal by ID
     var routeModal = document.getElementById('myDetailsModal');
 
     // When the user clicks anywhere outside of the modal, close it

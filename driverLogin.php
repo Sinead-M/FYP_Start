@@ -2,7 +2,8 @@
     <head>
         <title>Kerry Flyer Timetables</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
+
+        <!--Decides which header to use depending on if a user is logged in-->
     <?php
     session_start();
     if(isset($_SESSION['user'])){
@@ -13,8 +14,8 @@
     }
     ?>
     <body>
+    <!--    Form for user name and password and submits the data to be checked -->
         <h2 class="loginHeading">Drivers Login</h2>
-<!--        <a href="index.php">Click here to go back</a><br/>-->
         <div class="container">
             <form action="checklogin.php" method="post">
                 <div class="form-input">

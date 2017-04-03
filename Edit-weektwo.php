@@ -6,7 +6,7 @@ else{
     header("location:index.php");
 }
 
-//Receives information for the form when a route is being edited and updates the data base Edit.php
+//Receives information for the form when a route is being edited and updates the data base for the second week
 if($_SERVER['REQUEST_METHOD'] = "POST") {
     $vehicle = $_POST['vehicleNumber'];
     $driverName = $_POST['driverName'];
@@ -20,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] = "POST") {
     mysql_connect("localhost", "root", "") or die(mysql_error());
     mysql_select_db("kerry_flyer") or die("Cannot connect to database");
 
+//    Updates the appropriate route in the database and relocates the user to the adminhome page second week
     if ($_POST['Monday-true'] != null) {
         mysql_query("UPDATE routestwo SET route_no='$routeNumber', passenger_no='$numberPass', time='$time', passenger_assist='$passAssist', access_req='$access' WHERE  driver='$driverName' AND route_name='$routeName' AND monday='yes'");
         Print '<script>alert("This route has been updated");</script>';

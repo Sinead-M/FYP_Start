@@ -33,7 +33,7 @@
             logoutmodal.style.display = "block";
         };
 
-        // When the user clicks on <span> (x), close the modal
+        // When the user clicks on the close button, close the modal
         cancelbtn.onclick = function() {
             logoutmodal.style.display = "none";
         };
